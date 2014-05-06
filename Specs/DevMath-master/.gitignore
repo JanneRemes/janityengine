@@ -1,0 +1,10 @@
+*.DS_Store
+*.suo
+
+._*
+
+build/Android/
+build/Win32/
+build/x64/
+Obj/
+test/
