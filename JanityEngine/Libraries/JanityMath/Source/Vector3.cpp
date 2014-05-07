@@ -5,6 +5,7 @@
 using namespace JanityMath;
 
 Vector3::Vector3() : x(0), y(0), z(0) {}
+Vector3::Vector3(float value) : x(value), y(value), z(value){}
 Vector3::Vector3(float X, float Y, float Z) : x(X), y(Y), z(Z){}
 Vector3::Vector3(const Vector3& other)
 {
@@ -18,7 +19,7 @@ float Vector3::magnitude() const
 {
 	return sqrt(x * x + y * y + z * z);
 }
-bool Vector3::isUnitVector()
+bool Vector3::isUnitVector() const
 {
 	return equals(magnitude(), 1.0f);
 }
@@ -26,22 +27,22 @@ Vector2 Vector3::xy() const
 {
 	return Vector2(x, y);
 }
-Vector3 Vector3::cross(const Vector3& vector)
+Vector3 Vector3::cross(const Vector3& rhs)
 {
-	const float x = y * vector.z - z*vector.y;
-	const float y = y * vector.x - x * vector.z;
-	const float z = x * vector.y - y * vector.x;
+	const float x = y * rhs.z - z*rhs.y;
+	const float y = y * rhs.x - x * rhs.z;
+	const float z = x * rhs.y - y * rhs.x;
 	return Vector3(x,y,z);
 }
-float Vector3::distance(const Vector3& vector) const
+float Vector3::distance(const Vector3& rhs) const
 {
 	return 1;//(*this - vector).magnitude();
 }
-float Vector3::dot(const Vector3& vector)
+float Vector3::dot(const Vector3& rhs)
 {
-	const float _x = x * vector.x;
-	const float _y = y *vector.y;
-	const float _z = z * vector.z;
+	const float _x = x * rhs.x;
+	const float _y = y *rhs.y;
+	const float _z = z * rhs.z;
 	return _x + _y + _z;
 }
 Vector3 Vector3::normal()
@@ -67,22 +68,22 @@ Vector3& Vector3::operator =(const Vector3& rhs)
 		return *this;
 	}
 }
-Vector3& Vector3::operator +(const Vector3& rhs)
+Vector3 Vector3::operator +(const Vector3& rhs) const
 {
-	this->x = this->x + rhs.x;
-	this->y = this->y + rhs.y;
-	this->z = this->z + rhs.z;
-	return *this;
+	const float _x = this->x + rhs.x;
+	const float _y = this->y + rhs.y;
+	const float _z = this->z + rhs.z;
+	return Vector3(_x, _y, _z);
 }
 Vector3& Vector3::operator +=(const Vector3& rhs)
 {
 	return operator+(rhs);
 }
-Vector3& Vector3::operator -(const Vector3& rhs)
+Vector3 Vector3::operator -(const Vector3& rhs) const
 {
-	this->x = this->x - rhs.x;
-	this->y = this->y - rhs.y;
-	this->z = this->z - rhs.z;
+	const float _x = this->x - rhs.x;
+	const float _y = this->y - rhs.y;
+	const float _z = this->z - rhs.z;
 	return *this;
 }
 Vector3& Vector3::operator -=(const Vector3& rhs)
@@ -90,13 +91,13 @@ Vector3& Vector3::operator -=(const Vector3& rhs)
 	return operator -(rhs);
 }
 
-Vector3& Vector3::operator /(float divisor)
+Vector3 Vector3::operator /(float divisor) const
 {
 	assert (!equals(divisor, 0.0f));
 	
-	this->x = this->x / divisor;
-	this->y = this->y / divisor;
-	this->z = this->z / divisor;
+	const float _x = this->x / divisor;
+	const float _y = this->y / divisor;
+	const float _z = this->z / divisor;
 	return *this;
 }
 Vector3& Vector3::operator /=(float divisor)
@@ -120,15 +121,15 @@ Vector3 Vector3::operator -()
 	return Vector3(-x, -y, -z);
 }
 
-float& Vector3::operator [](const unsigned int index)
+float& Vector3::operator [](const uint index)
 {
-	assert (index < (unsigned int)COMPONENTS);
+	assert (index < (uint)COMPONENTS);
 	return (&x)[index];
 }
 
-const float& Vector3::operator [](const unsigned int index) const
+const float& Vector3::operator [](const uint index) const
 {
-	assert(index < (unsigned int)COMPONENTS);
+	assert(index < (uint)COMPONENTS);
 	return (&x)[index];
 }
 

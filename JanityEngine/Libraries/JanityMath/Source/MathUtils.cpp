@@ -109,10 +109,10 @@ namespace JanityMath
 			return A;
 	}
 
-	void initializeRandom(unsigned int seed)
+	void initializeRandom(uint seed)
 	{
 		if(seed == 0)
-			seed = (unsigned int)time(NULL);
+			seed = (uint)time(NULL);
 
 		srand(seed);
 	}

@@ -19,7 +19,7 @@ float Vector2::magnitude() const
 	return sqrt(x * x + y * y);
 }
 
-bool Vector2::isUnitVector()
+bool Vector2::isUnitVector() const
 {
 	return equals(magnitude(), 1.0f);
 }
@@ -105,15 +105,15 @@ const Vector2& Vector2::operator /=(const float divisor)
 	return *this;
 }
 
-float& Vector2::operator [](const unsigned int index)
+float& Vector2::operator [](const uint index)
 {
-	assert(index < (unsigned int)COMPONENTS);
+	assert(index < (uint)COMPONENTS);
 	return (&x)[index];
 }
 
-const float& Vector2::operator [](const unsigned int index) const
+const float& Vector2::operator [](const uint index) const
 {
-	assert(index < (unsigned int)COMPONENTS);
+	assert(index < (uint)COMPONENTS);
 	return (&x)[index];
 }
 

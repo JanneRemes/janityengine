@@ -1,7 +1,10 @@
+#ifndef JANITYMATH_MATHUTILS_H
+#define JANITYMATH_MATHUTILS_H
 
 namespace JanityMath
 {
 		const double PI =3.1415926535897932;
+		typedef unsigned int uint;
 
 		double clamp(const double value, const double min, const double max);
 		float clamp(const float value, const float min, const float max);
@@ -18,7 +21,7 @@ namespace JanityMath
 		bool equals(const double valueA, const double valueB, const double threshold = 0.001);
 		bool equals(const float valueA, const float valueB, const float threshold = 0.001f);
 
-		void initializeRandom(unsigned int seed = 0);
+		void initializeRandom(uint seed = 0);
 		double random();
 		double random(const double min, const double max);
 		int random(const int min, const int max);
@@ -36,3 +39,5 @@ namespace JanityMath
 		double toRadians(const double angle);
 		float toRadians(const float angle);
 }
+
+#endif
