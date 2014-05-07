@@ -12,9 +12,12 @@ namespace JanityMath
 	class Matrix4
 	{
 	public:
+	//	Variables Start
 		static const uint COLUMNS = 4;
 		static const uint ROWS = 4;
+	//	Variables End
 
+	//	Constructors Start
 		Matrix4();
 
 		Matrix4(const float m11, const float m12, const float m13, const float m14,
@@ -32,43 +35,33 @@ namespace JanityMath
 		Matrix4(const Matrix4& matrix);
 
 		~Matrix4();
+	//	Constructors End
 
+	//	Methods Start
 		const float* elements() const;
-
 		float determinant() const;
-
 		Matrix4 inverse() const;
-
 		Matrix4 transpose() const;
 
 		Vector3 extractPosition() const;
-
 		Matrix4 extractRotation() const;
-
 		Matrix4 extractRotation(const Vector3& scaling) const;
-
 		Vector3 extractScaling() const;
 
 		static Matrix4 identity();
 
 		static Matrix4 createRotationX(const float angle);
-
 		static Matrix4 createRotationY(const float angle);
-
 		static Matrix4 createRotationZ(const float angle);
-
 		static Matrix4 createRotationAxis(const Vector3& axis, const float angle);
 
 		static Matrix4 createScaling(const float x = 1.0f, const float y = 1.0f, const float z = 1.0f);
-
 		static Matrix4 createScaling(const Vector3& scaling);
-
 		static Matrix4 createScalingAxis(const Vector3& axis, const float scale);
 
 		static Matrix4 createTranslation(const float x, const float y, const float z);
-
 		static Matrix4 createTranslation(const Vector3& translation);
-
+	//	Methods End
 
 		Matrix4& operator =(const Matrix4& rhs);
 		
@@ -101,13 +94,6 @@ namespace JanityMath
 	private:
 		Vector4 _columns[4];
 		Matrix4 adjugate() const;
-
-		
-
-
-
-
-
 	};
 }
 

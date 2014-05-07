@@ -3,9 +3,12 @@
 
 namespace JanityMath
 {
+//Variables Start
 		const double PI =3.1415926535897932;
 		typedef unsigned int uint;
+//Variables End
 
+//Functions Start
 		double clamp(const double value, const double min, const double max);
 		float clamp(const float value, const float min, const float max);
 		int clamp(const int value, const int min, const int max);
@@ -38,6 +41,7 @@ namespace JanityMath
 
 		double toRadians(const double angle);
 		float toRadians(const float angle);
+//Functions End
 }
 
 #endif

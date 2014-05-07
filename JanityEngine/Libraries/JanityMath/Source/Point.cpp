@@ -1,4 +1,5 @@
 #include <Point.h>
+#include <MathUtils.h>
 using namespace JanityMath;
 
 // Public

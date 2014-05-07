@@ -1,7 +1,11 @@
 #include <Vector3.h>
-#include <MathUtils.h>
 #include <math.h>
 #include <cassert>
+
+#include <Matrix4.h>
+#include <Quaternion.h>
+#include <MathUtils.h>
+#include <Vector4.h>
 using namespace JanityMath;
 
 Vector3::Vector3() : x(0), y(0), z(0) {}
@@ -27,18 +31,18 @@ Vector2 Vector3::xy() const
 {
 	return Vector2(x, y);
 }
-Vector3 Vector3::cross(const Vector3& rhs)
+Vector3 Vector3::cross(const Vector3& rhs) const
 {
-	const float x = y * rhs.z - z*rhs.y;
-	const float y = y * rhs.x - x * rhs.z;
-	const float z = x * rhs.y - y * rhs.x;
-	return Vector3(x,y,z);
+	const float _x = y * rhs.z - z*rhs.y;
+	const float _y = y * rhs.x - x * rhs.z;
+	const float _z = x * rhs.y - y * rhs.x;
+	return Vector3(_x,_y,_z);
 }
 float Vector3::distance(const Vector3& rhs) const
 {
 	return 1;//(*this - vector).magnitude();
 }
-float Vector3::dot(const Vector3& rhs)
+float Vector3::dot(const Vector3& rhs) const
 {
 	const float _x = x * rhs.x;
 	const float _y = y *rhs.y;
@@ -49,7 +53,8 @@ Vector3 Vector3::normal()
 {
 	return *this / magnitude();
 }
-static Vector3 zero()
+
+Vector3 Vector3::zero()
 {
 	return Vector3(0,0,0);
 }
@@ -116,7 +121,7 @@ bool Vector3::operator !=(const Vector3& rhs) const
 {
 	return !(*this == rhs);
 }
-Vector3 Vector3::operator -()
+Vector3 Vector3::operator -() const
 {
 	return Vector3(-x, -y, -z);
 }

@@ -4,13 +4,20 @@
 #include <iostream>
 #include <Vector2.h>
 #include <Vector3.h>
-#include <MathUtils.h>
 
 namespace JanityMath
 {
+	class Quaternion;
+
 	class Vector4
 	{
 	public:
+	//	Variables Start
+		float x,y,z,w;
+		static const uint COMPONENTS = 4;
+	//	Variables End
+
+	//	Constructors Start
 		Vector4();
 		explicit Vector4(const float value);
 		Vector4(const float X, const float Y, const float Z, const float W);
@@ -18,10 +25,9 @@ namespace JanityMath
 		Vector4(const Vector3& vector, const float W);
 		Vector4(const Vector4& vector);
 		~Vector4();
+	//	Constructors End
 
-		static const uint COMPONENTS = 4;
-
-		float x,y,z,w;
+	//	Methods Start
 		float magnitude() const;
 
 		bool isUnitVector() const;
@@ -31,12 +37,17 @@ namespace JanityMath
 		float dot(const Vector4& rhs);
 		Vector4 normal();
 		static Vector4 zero();
+	//	Methods End
 
+	//	Operators Start
 		Vector4& operator =(const Vector4& rhs);
+
 		Vector4 operator +(const Vector4& rhs) const;
 		Vector4& operator +=(const Vector4& rhs);
+
 		Vector4 operator -(const Vector4& rhs) const;
 		Vector4& operator -=(const Vector4& rhs);
+
 		Vector4 operator /(float divisor) const;
 		Vector4& operator /=(float divisor);
 
@@ -52,6 +63,7 @@ namespace JanityMath
 		friend Vector4 operator *(const float scalar, const Vector4& vector);
 		friend const Vector4& operator *=(Vector4& vector, const float scalar);
 		friend std::ostream& operator <<(std::ostream output, const Vector4& vector);
+	//	Operators End
 	};
 }
 
