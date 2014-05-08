@@ -2,7 +2,7 @@
 
 #include <FileReader.h>
 
-using namespace Janity;
+using namespace KaMo;
 using namespace glm;
 
 

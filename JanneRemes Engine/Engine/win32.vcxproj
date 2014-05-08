@@ -26,6 +26,9 @@
     <ClCompile Include="jni\ObjLoader.cpp" />
     <ClCompile Include="jni\Quad.cpp" />
     <ClCompile Include="jni\Scene01.cpp" />
+    <ClCompile Include="jni\Scene02.cpp" />
+    <ClCompile Include="jni\Scene03.cpp" />
+    <ClCompile Include="jni\Scene04.cpp" />
     <ClCompile Include="jni\Shader.cpp" />
     <ClCompile Include="jni\Sound.cpp" />
     <ClCompile Include="jni\SoundManager.cpp" />
@@ -52,6 +55,9 @@
     <ClInclude Include="jni\ObjLoader.h" />
     <ClInclude Include="jni\Quad.h" />
     <ClInclude Include="jni\Scene01.h" />
+    <ClInclude Include="jni\Scene02.h" />
+    <ClInclude Include="jni\Scene03.h" />
+    <ClInclude Include="jni\Scene04.h" />
     <ClInclude Include="jni\Shader.h" />
     <ClInclude Include="jni\Sound.h" />
     <ClInclude Include="jni\SoundManager.h" />

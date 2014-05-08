@@ -1,5 +1,5 @@
 #include <Object.h>
-using namespace Janity;
+using namespace KaMo;
 
 Object::Object()
 {

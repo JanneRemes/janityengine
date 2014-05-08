@@ -8,7 +8,7 @@
 #include <Debug.h>
 #include <FileReader.h>
 
-namespace Janity
+namespace KaMo
 {
 	class Shader
 	{

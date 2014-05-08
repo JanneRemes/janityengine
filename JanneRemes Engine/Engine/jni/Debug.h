@@ -7,7 +7,7 @@
 
 #include <Win32toAndroid.h>
 
-namespace Janity
+namespace KaMo
 {
 	class Debug
 	{

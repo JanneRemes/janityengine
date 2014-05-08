@@ -1,5 +1,5 @@
 #include <Shader.h>
-using namespace Janity;
+using namespace KaMo;
 Shader::Shader()
 {
 

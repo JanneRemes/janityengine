@@ -4,7 +4,7 @@
 #include <OpenGL.h>
 #include <Util.h>
 #pragma comment(lib, "opengl32.lib")
-using namespace Janity;
+using namespace KaMo;
 
 HWND Window::handle;
 HGLRC Window::OGLcontext;
@@ -12,7 +12,7 @@ HDC Window::hdc;
 
 Window::Window(HINSTANCE instance,const char* windowName,int width,int height)
 {
-	//Windowclass, defines template for windows
+//Windowclass, defines template for windows
 	WNDCLASSEX wndClass;
 	wndClass.cbSize = sizeof(WNDCLASSEX);
 	wndClass.style = CS_HREDRAW | CS_VREDRAW;
@@ -30,7 +30,7 @@ Window::Window(HINSTANCE instance,const char* windowName,int width,int height)
 	//register window class
 	if(!RegisterClassEx(&wndClass))
 	{
-
+		
 	}
 
 	//Creates window and return handle to it (a way to access the windows attributes)
@@ -45,7 +45,7 @@ Window::Window(HINSTANCE instance,const char* windowName,int width,int height)
 	UpdateWindow(handle);
 
 	//pixel format description, only point worth of notice is if its 32 or 24 bit (alpha or no alpha)
-	PIXELFORMATDESCRIPTOR pixelFormatDesc = {
+			PIXELFORMATDESCRIPTOR pixelFormatDesc = {
 		sizeof(PIXELFORMATDESCRIPTOR),
 		1,
 		PFD_DRAW_TO_WINDOW | PFD_SUPPORT_OPENGL | PFD_DOUBLEBUFFER,
@@ -58,7 +58,7 @@ Window::Window(HINSTANCE instance,const char* windowName,int width,int height)
 		0,
 		0, 0, 0
 	};
-
+	
 	//Device Contex handle
 	hdc = GetDC(handle); // Gets the display context
 
@@ -92,14 +92,13 @@ Window::Window(HINSTANCE instance,const char* windowName,int width,int height)
 
 		//return 0;
 	}
-
+	
 	LoadOpenGLFunctions(); // Loads OpenGL 2.1 functions
 	//glViewport(0, 0, width, height); // Sets up the OpenGL viewport
 
 	MSG msg ={};
 	Game* game = new Game(width,height+2,width,height);
-
-		
+	
 
 	float dt = 0.0f;
 	float oldTime = 0.0f;
@@ -107,7 +106,7 @@ Window::Window(HINSTANCE instance,const char* windowName,int width,int height)
 	// Main message loop:
 	while(msg.message != WM_QUIT)
 	{
-
+		
 		if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
 		{
 			TranslateMessage(&msg);
@@ -134,11 +133,11 @@ LRESULT CALLBACK Window::wEventsProc(HWND hWnd, UINT message, WPARAM wParam, LPA
 {
 	switch (message)
 	{
-	case WM_DESTROY:
-		PostQuitMessage(0);
-		break;
-	default:
-		return DefWindowProc(hWnd, message, wParam, lParam);
+		case WM_DESTROY:
+			PostQuitMessage(0);
+			break;
+		default:
+			return DefWindowProc(hWnd, message, wParam, lParam);
 	}
 	return 1;
 }

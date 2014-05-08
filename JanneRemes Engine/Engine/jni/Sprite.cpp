@@ -1,5 +1,5 @@
 #include <Sprite.h>
-using namespace Janity;
+using namespace KaMo;
 
 Sprite::Sprite() 
 	: Quad(0,0,0,32,32) 	

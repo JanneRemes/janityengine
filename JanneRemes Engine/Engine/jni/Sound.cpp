@@ -6,7 +6,7 @@
 //RESTRUCTURE
 #include "sndfile/sndfile.h"
 
-using namespace Janity;
+using namespace KaMo;
 
 
 Sound::Sound(const std::string& fileName)
@@ -146,10 +146,10 @@ void Sound::Initialize(const std::string& fileName)
 		return;
 	}
 
-	//Debug::WriteLog("frames: %d\n", soundInfo.frames);
-	//Debug::WriteLog("samplerate: %d\n", soundInfo.samplerate);
-	//Debug::WriteLog("channels: %d\n", soundInfo.channels);
-	//Debug::WriteLog("format: %d\n", soundInfo.format);
+	Debug::WriteLog("frames: %d\n", soundInfo.frames);
+	Debug::WriteLog("samplerate: %d\n", soundInfo.samplerate);
+	Debug::WriteLog("channels: %d\n", soundInfo.channels);
+	Debug::WriteLog("format: %d\n", soundInfo.format);
 
 	sf_count_t frames = soundInfo.frames * soundInfo.channels;
 
@@ -157,7 +157,7 @@ void Sound::Initialize(const std::string& fileName)
 
 	sf_read_short(file, data, frames);
 
-	//Debug::WriteLog("frames: %d\n", frames);
+	Debug::WriteLog("frames: %d\n", frames);
 
 	alBufferData(buffer, AL_FORMAT_STEREO16, data, frames * sizeof(short), soundInfo.samplerate);
 	Debug::CheckALError("alBufferData");
@@ -166,7 +166,7 @@ void Sound::Initialize(const std::string& fileName)
 	Debug::CheckALError("alSourcei");
 
 	duration = (float)soundInfo.frames / (float)soundInfo.samplerate;
-	//Debug::WriteLog("duration: %f\n", duration);
+	Debug::WriteLog("duration: %f\n", duration);
 
 
 	sf_close(file);

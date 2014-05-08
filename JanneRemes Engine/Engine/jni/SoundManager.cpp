@@ -1,7 +1,7 @@
 #include <SoundManager.h>
 #include <Debug.h>
 
-using namespace Janity;
+using namespace KaMo;
 
 
 bool SoundManager::initialized = false;
@@ -21,6 +21,8 @@ SoundManager::~SoundManager()
 	alcCloseDevice(device);
 }
 
+
+
 void SoundManager::CreateContext()
 {
 	if(!initialized)
@@ -31,7 +33,7 @@ void SoundManager::CreateContext()
 		if(!device)
 			Debug::WriteLog("Failed to open audio device!");
 
-		//Debug::WriteLog("Audio device opened.\n");
+		Debug::WriteLog("Audio device opened.\n");
 
 		context = alcCreateContext(device, 0);
 		if(!alcMakeContextCurrent(context))

@@ -5,11 +5,13 @@
 #include <Sound.h>
 #include <Primitives.h>
 #include <Camera.h>
-#include <Debug.h>
+
 #include <Scene01.h>
+#include <Scene02.h>
+#include <Scene03.h>
+#include <Scene04.h>
 
-
-namespace Janity
+namespace KaMo
 {
 	class Demo
 	{
@@ -33,6 +35,9 @@ namespace Janity
 		void CreateScenes();
 
 		Scene01* scene1;
+		Scene02* scene2;
+		Scene03* scene3;
+		Scene04* scene4;
 
 		Sound* bgMusic;
 		Sound* soundEffect[2];

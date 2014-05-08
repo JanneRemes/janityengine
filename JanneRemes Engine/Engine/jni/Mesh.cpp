@@ -3,7 +3,7 @@
 #include <Debug.h>
 #include <Camera.h>
 
-using namespace Janity;
+using namespace KaMo;
 
 Mesh::Mesh(int X, int Y, int Z, float scale, const char* objPath)
 {
@@ -155,11 +155,10 @@ void Mesh::Move(float X, float Y, float Z)
 	translation = glm::translate(glm::vec3(x, y, z));
 }
 
-void Mesh::Move(glm::vec3 vec3)
+void Mesh::Move(glm::vec3 vector)
 {
-	translation = glm::translate(vec3);
+	Move(vector.x, vector.y, vector.z);
 }
-
 void Mesh::Resize(float W, float H, float D)
 {
 	scale = glm::scale(W, H, D);

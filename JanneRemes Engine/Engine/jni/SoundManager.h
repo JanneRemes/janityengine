@@ -5,7 +5,7 @@
 #include <AL\al.h>
 #include <AL\alc.h>
 
-namespace Janity
+namespace KaMo
 {
 	class SoundManager
 	{

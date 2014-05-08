@@ -10,7 +10,7 @@
 #include <SoundManager.h>
 #include <ObjLoader.h>
 
-namespace Janity
+namespace KaMo
 {
 	class Engine
 	{

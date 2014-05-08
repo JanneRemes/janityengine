@@ -7,7 +7,7 @@
 
 // TODO: texture scale 1 = w*scale, h*scale
 
-namespace Janity
+namespace KaMo
 {
 	extern struct Transform;
 	class Sprite : public Quad

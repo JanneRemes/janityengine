@@ -5,7 +5,7 @@
 #include <Engine.h>
 #include <Demo.h>
 
-namespace Janity
+namespace KaMo
 {
 
 

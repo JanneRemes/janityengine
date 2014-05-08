@@ -1,12 +1,12 @@
 #include <Camera.h>
 #include <Debug.h>
 
-using namespace Janity;
+using namespace KaMo;
 
 glm::mat4 Camera::_view        =	glm::mat4(0);
 glm::mat4 Camera::_projection  =	glm::mat4(0);
 
-glm::vec3 Camera::_position	 = glm::vec3(0);
+glm::vec3 Camera::_position  = glm::vec3(0);
 glm::vec3 Camera::_lookAt    = glm::vec3(0);
 glm::vec3 Camera::_axis		 = glm::vec3(0);
 

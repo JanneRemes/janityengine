@@ -6,7 +6,7 @@
 #include <Shader.h>
 #include <Texture.h>
 #include <glm\glm.hpp>
-namespace Janity
+namespace KaMo
 {
 	class Quad
 	{

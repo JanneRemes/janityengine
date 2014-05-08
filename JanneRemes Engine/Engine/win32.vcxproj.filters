@@ -78,11 +78,17 @@
     <ClCompile Include="jni\Sprite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="jni\Scene02.cpp">
+      <Filter>Demo</Filter>
+    </ClCompile>
     <ClCompile Include="jni\Object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="jni\SpriteComponent.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\Scene03.cpp">
+      <Filter>Demo</Filter>
     </ClCompile>
     <ClCompile Include="jni\Camera.cpp">
       <Filter>Source Files</Filter>
@@ -94,6 +100,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="jni\Primitives.cpp">
+      <Filter>Demo</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\Scene04.cpp">
       <Filter>Demo</Filter>
     </ClCompile>
   </ItemGroup>
@@ -149,11 +158,17 @@
     <ClInclude Include="jni\Sprite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="jni\Scene02.h">
+      <Filter>Demo</Filter>
+    </ClInclude>
     <ClInclude Include="jni\Object.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="jni\SpriteComponent.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\Scene03.h">
+      <Filter>Demo</Filter>
     </ClInclude>
     <ClInclude Include="jni\Camera.h">
       <Filter>Header Files</Filter>
@@ -165,6 +180,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="jni\Primitives.h">
+      <Filter>Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\Scene04.h">
       <Filter>Demo</Filter>
     </ClInclude>
   </ItemGroup>

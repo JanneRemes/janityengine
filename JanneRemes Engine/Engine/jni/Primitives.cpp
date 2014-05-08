@@ -1,6 +1,6 @@
 #include <Primitives.h>
 
-using namespace Janity;
+using namespace KaMo;
 
 Primitives::Model Primitives::Cube;
 Primitives::Model Primitives::Plane;

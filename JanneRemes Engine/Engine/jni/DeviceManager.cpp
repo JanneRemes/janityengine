@@ -1,5 +1,5 @@
 #include <DeviceManager.h>
-using namespace Janity;
+using namespace KaMo;
 
 
 DeviceManager::DeviceManager()

@@ -11,7 +11,7 @@
 #include <glm\glm.hpp>
 #include <glm\ext.hpp>
 
-namespace Janity
+namespace KaMo
 {
 	class Mesh
 	{
@@ -22,7 +22,7 @@ namespace Janity
 		~Mesh();
 		
 		void Move(float X, float Y, float Z);
-		void Move(glm::vec3 vec3);
+		void Move(glm::vec3 vector);
 		void Resize(float W, float H, float D);
 		void Rotate(float, int X, int Y, int Z);
 		void SetTexture(const char* Texture);
