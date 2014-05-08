@@ -7,8 +7,6 @@
 
 namespace Janity
 {
-
-
 	class Game : Engine
 	{
 	public:

@@ -10,5 +10,7 @@ public:
 	static HGLRC OGLcontext;
 	static HDC hdc;
 	static LRESULT CALLBACK wEventsProc(HWND handle, UINT msg, WPARAM wParam, LPARAM lParam);
+
+	
 };
 

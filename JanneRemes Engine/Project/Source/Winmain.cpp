@@ -1,8 +1,7 @@
-//#include <JanityMath\Include\JanityMath.h>
-
-#include <Win32toAndroid.h>
-#include <Window.h>
 #include <Windows.h>
+#include <JanityEngine\Include\Window.h>
+#include <JanityEngine\Include\Win32toAndroid.h>
+
 /*
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR cmdLine, int cmdShow) 
 {

@@ -12,6 +12,7 @@
 #include <GL/GL.h>
 #include <GL/glext.h>
 
+
 void LoadOpenGLFunctions();
 
 extern PFNGLACTIVETEXTUREPROC				glActiveTexture;
