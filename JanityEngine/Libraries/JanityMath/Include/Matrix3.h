@@ -67,7 +67,8 @@ namespace JanityMath
 
 		Matrix3 operator *(const Matrix3& rhs) const;
 		const Matrix3& operator *=(const Matrix3& rhs);
-	
+		Vector3 operator *(const Vector3& vector) const;
+
 		bool operator ==(const Matrix3& rhs) const;
 		bool operator !=(const Matrix3& rhs) const;
 

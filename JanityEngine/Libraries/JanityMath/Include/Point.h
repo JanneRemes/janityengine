@@ -19,6 +19,12 @@ namespace JanityMath
 		Point(const Point& other);
 	//	Constructors End
 
+	//	Methods Start
+		Point maximum(const Point& point) const;
+		Point minimum(const Point& point) const;
+		static Point zero();
+	//	Methods End
+
 	//	Operators Start
 		inline Point& operator= (const Point& rhs);
 		inline Point& operator+= (const Point& rhs);

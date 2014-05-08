@@ -11,6 +11,10 @@ using namespace JanityMath;
 Vector3::Vector3() : x(0), y(0), z(0) {}
 Vector3::Vector3(float value) : x(value), y(value), z(value){}
 Vector3::Vector3(float X, float Y, float Z) : x(X), y(Y), z(Z){}
+Vector3::Vector3(const Vector2& vector, const float z)
+	: x(vector.x),
+	  y(vector.y),
+	  z(z) { }
 Vector3::Vector3(const Vector3& other)
 {
 	x = other.x;
@@ -52,6 +56,17 @@ float Vector3::dot(const Vector3& rhs) const
 Vector3 Vector3::normal()
 {
 	return *this / magnitude();
+}
+
+Vector3 Vector3::transform(const Matrix4& transform) const
+{
+	const Vector4 vector = transform * Vector4(*this, 1.0f);
+	return vector.xyz();
+}
+
+Vector3  Vector3::transform(const Quaternion& quaternion) const
+{
+	return quaternion.rotate(*this);
 }
 
 Vector3 Vector3::zero()

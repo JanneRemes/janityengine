@@ -2,12 +2,35 @@
 #include <MathUtils.h>
 using namespace JanityMath;
 
-// Public
 Point::Point() : x(0), y(0){}
 Point::Point(float X, float Y) : x(X), y(Y){}
 Point::~Point(){}
 Point::Point(const Point& other) : x(other.x), y(other.y){}
 
+// Public
+
+Point Point::maximum(const Point& point) const
+{
+	const int _x = JanityMath::maximum(x, point.x);
+	const int _y = JanityMath::maximum(y, point.y);
+
+	return Point(_x, _y);
+}
+
+Point Point::minimum(const Point& point) const
+{
+	const int _x = JanityMath::minimum(x, point.x);
+	const int _y = JanityMath::minimum(y, point.y);
+
+	return Point(_x, _y);
+}
+
+// Static
+Point Point::zero()
+{
+	return Point(0, 0);
+}
+// Operators
 Point& Point::operator= (const Point& rhs)
 {
 	this->x = rhs.x;

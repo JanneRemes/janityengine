@@ -22,8 +22,9 @@ namespace JanityMath
 		Vector3();
 		explicit Vector3(float value);
 		Vector3(float X, float Y, float Z);
-		~Vector3();
+		Vector3(const Vector2& vector, const float z);
 		Vector3(const Vector3& other);
+		~Vector3();
 	//	Constructors End
 
 	//	Methods Start
@@ -35,6 +36,8 @@ namespace JanityMath
 		float distance(const Vector3& rhs) const;
 		float dot(const Vector3& rhs) const;
 		Vector3 normal();
+		Vector3 transform(const Matrix4& transform) const;
+		Vector3 transform(const Quaternion& quaternion) const;
 		static Vector3 zero();
 	//	Methods End
 

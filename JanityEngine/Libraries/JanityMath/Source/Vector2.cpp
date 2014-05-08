@@ -52,6 +52,26 @@ Vector2 Vector2::normal()
 	return Vector2(_x/magnitude(), _y/magnitude());
 }
 
+Vector2 Vector2::transform(const Matrix3& transform) const
+{
+	const Vector3 result = transform * Vector3(*this, 1.0f);
+	return result.xy();
+}
+
+Vector2 Vector2::transform(const Matrix4& transform) const
+{
+	const Vector4 result = transform * Vector4(*this, 0.0f, 1.0f);
+	return result.xy();
+}
+
+Vector2 Vector2::transform(const Quaternion& quaternion) const
+{
+	const Vector3 vector(*this, 0.0f);
+	const Vector3 result = quaternion.rotate(vector);
+
+	return result.xy();
+}
+
 //static
 Vector2 Vector2::zero()
 {

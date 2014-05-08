@@ -33,6 +33,9 @@ namespace JanityMath
 		float distance(const Vector2& vector) const; 
 		float dot(const Vector2& vector) const;
 		Vector2 normal();
+		Vector2 transform(const Matrix3& transform) const;
+		Vector2 transform(const Matrix4& transform) const;
+		Vector2 transform(const Quaternion& quaternion) const;
 		static Vector2 zero();
 	//	Methods End
 

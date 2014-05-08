@@ -254,6 +254,26 @@ const Matrix3& Matrix3::operator *=(const Matrix3& rhs)
 	return *this;
 }
 
+Vector3 Matrix3::operator *(const Vector3& vector) const
+{
+	const float m11 = _columns[0][0];
+	const float m12 = _columns[0][1];
+	const float m13 = _columns[0][2];
+	const float m21 = _columns[1][0];
+	const float m22 = _columns[1][1];
+	const float m23 = _columns[1][2];
+	const float m31 = _columns[2][0];
+	const float m32 = _columns[2][1];
+	const float m33 = _columns[2][2];
+
+	return Vector3
+	(
+		m11 * vector.x + m21 * vector.y + m31 * vector.z,
+		m12 * vector.x + m22 * vector.y + m32 * vector.z,
+		m13 * vector.x + m23 * vector.y + m33 * vector.z
+	);
+}
+
 bool Matrix3::operator ==(const Matrix3& rhs) const
 {
 	for(uint c = 0; c < COLUMNS; ++c)

@@ -3,6 +3,8 @@
 #include <cassert>
 #include <cmath>
 
+#include <Quaternion.h>
+#include <MathUtils.h>
 using namespace JanityMath;
 
 Vector4::Vector4() : x(0), y(0), z(0), w(0) { }
@@ -71,6 +73,12 @@ float Vector4::dot(const Vector4& rhs)
 Vector4 Vector4::normal()
 {
 	return *this / magnitude();
+}
+
+Vector4 Vector4::transform(const Quaternion& quaternion) const
+{
+	const Vector3 result = quaternion.rotate(xyz());
+	return Vector4(result, w);
 }
 
 // static

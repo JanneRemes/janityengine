@@ -84,16 +84,21 @@
     <ClCompile Include="Source\Matrix4.cpp" />
     <ClCompile Include="Source\Point.cpp" />
     <ClCompile Include="Source\Quaternion.cpp" />
+    <ClCompile Include="Source\Rectangle.cpp" />
     <ClCompile Include="Source\Vector2.cpp" />
     <ClCompile Include="Source\Vector3.cpp" />
     <ClCompile Include="Source\Vector4.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Include\JanityMath.h" />
     <ClInclude Include="Include\MathUtils.h" />
+    <ClInclude Include="Include\Matrix.h" />
     <ClInclude Include="Include\Matrix3.h" />
     <ClInclude Include="Include\Matrix4.h" />
     <ClInclude Include="Include\Point.h" />
     <ClInclude Include="Include\Quaternion.h" />
+    <ClInclude Include="Include\Rectangle.h" />
+    <ClInclude Include="Include\Vector.h" />
     <ClInclude Include="Include\Vector2.h" />
     <ClInclude Include="Include\Vector3.h" />
     <ClInclude Include="Include\Vector4.h" />
