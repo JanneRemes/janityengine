@@ -3,9 +3,9 @@
 
 #include <iostream>
 
-#include <Matrix3.h>
-#include <Vector3.h>
-#include <Vector4.h>
+#include <JanityMath\Matrix3.h>
+#include <JanityMath\Vector3.h>
+#include <JanityMath\Vector4.h>
 
 namespace JanityMath
 {

@@ -2,8 +2,8 @@
 #define JANITYMATH_MATRIX3
 
 #include <iostream>
-#include <Vector2.h>
-#include <Vector3.h>
+#include <JanityMath\Vector2.h>
+#include <JanityMath\Vector3.h>
 
 //http://euclideanspace.com/
 namespace JanityMath

@@ -2,7 +2,7 @@
 #define JANITYMATH_VECTOR2_H
 
 #include <iostream>
-#include <MathUtils.h>
+#include <JanityMath\MathUtils.h>
 namespace JanityMath
 {
 	class Matrix3;

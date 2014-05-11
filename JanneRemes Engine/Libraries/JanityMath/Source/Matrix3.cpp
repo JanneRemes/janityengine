@@ -1,9 +1,9 @@
-#include <Matrix3.h>
+#include <JanityMath\Matrix3.h>
 
 #include <cassert>
 #include <cmath>
 
-#include <MathUtils.h>
+#include <JanityMath\MathUtils.h>
 
 using namespace JanityMath;
 

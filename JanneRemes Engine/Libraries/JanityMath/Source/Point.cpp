@@ -1,5 +1,5 @@
-#include <Point.h>
-#include <MathUtils.h>
+#include <JanityMath\Point.h>
+#include <JanityMath\MathUtils.h>
 using namespace JanityMath;
 
 Point::Point() : x(0), y(0){}

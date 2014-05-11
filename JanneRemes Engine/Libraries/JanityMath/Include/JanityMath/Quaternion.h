@@ -2,7 +2,7 @@
 #define JANITYMATH_QUATERNION_H
 
 #include <iostream>
-#include <Vector3.h>
+#include <JanityMath\Vector3.h>
 
 namespace JanityMath
 {

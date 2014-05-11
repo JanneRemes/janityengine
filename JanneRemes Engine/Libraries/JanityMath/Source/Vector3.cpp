@@ -1,11 +1,11 @@
-#include <Vector3.h>
+#include <JanityMath\Vector3.h>
 #include <math.h>
 #include <cassert>
 
-#include <Matrix4.h>
-#include <Quaternion.h>
-#include <MathUtils.h>
-#include <Vector4.h>
+#include <JanityMath\Matrix4.h>
+#include <JanityMath\Quaternion.h>
+#include <JanityMath\MathUtils.h>
+#include <JanityMath\Vector4.h>
 using namespace JanityMath;
 
 Vector3::Vector3() : x(0), y(0), z(0) {}

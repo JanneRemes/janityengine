@@ -1,14 +1,14 @@
-#include <Vector2.h>
+#include <JanityMath\Vector2.h>
 
 #include <math.h>
 #include <cassert>
 
-#include <MathUtils.h>
-#include <Vector3.h>
-#include <Vector4.h>
-#include <Matrix3.h>
-#include <Matrix4.h>
-#include <Quaternion.h>
+#include <JanityMath\MathUtils.h>
+#include <JanityMath\Vector3.h>
+#include <JanityMath\Vector4.h>
+#include <JanityMath\Matrix3.h>
+#include <JanityMath\Matrix4.h>
+#include <JanityMath\Quaternion.h>
 
 using namespace JanityMath;
 
