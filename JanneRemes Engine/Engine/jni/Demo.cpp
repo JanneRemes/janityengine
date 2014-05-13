@@ -10,7 +10,7 @@ Demo::Demo(float w, float h)
 	desiredHeight = h;
 	CreateScenes();
 
-	activeScene = 4;
+	activeScene = 1;
 	sceneTimer = 0.0f;
 
 	keyPressed = false;
@@ -108,11 +108,11 @@ void Demo::CreateScenes()
 	_primitives = new Primitives();
 	camera = Camera::CreateCamera(glm::vec3(0,10,30), glm::vec3(0,0,0), glm::vec3(0,1,0));
 
-	bgMusic = Sound::Load(Util::resourcePath + "media/kajak.ogg");
-	bgMusic->Loop(AL_TRUE);
-	soundEffect[0] = Sound::Load(Util::resourcePath + "media/hit.ogg");
+	//bgMusic = Sound::Load(Util::resourcePath + "media/kajak.ogg");
+	//bgMusic->Loop(AL_TRUE);
+	//soundEffect[0] = Sound::Load(Util::resourcePath + "media/hit.ogg");
 	//soundEffect[0]->Loop(AL_FALSE);
-	soundEffect[1] = Sound::Load(Util::resourcePath + "media/ruby.ogg");
+	//soundEffect[1] = Sound::Load(Util::resourcePath + "media/ruby.ogg");
 	//soundEffect[1]->Loop(AL_FALSE);
 	
 	scene1 = new Scene01(desiredWidth, desiredHeight);

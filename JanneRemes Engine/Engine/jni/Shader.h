@@ -15,7 +15,7 @@ namespace KaMo
 	public:
 		Shader();
 		~Shader();
-
+		
 		GLuint CreateShader(const char* fragPath, const char* vertPath);
 	
 	private:

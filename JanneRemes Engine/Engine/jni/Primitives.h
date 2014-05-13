@@ -24,10 +24,11 @@ namespace KaMo
 		Primitives();
 		~Primitives();
 
-		static struct Model Cube;
+		static struct Model Triangle;
 		static struct Model Plane;
+		static struct Model Cube;
 		static struct Model Sphere;
-		static struct Model Moon;
+		static struct Model Pyramid;
 
 	private:
 		Primitives(const Primitives&);

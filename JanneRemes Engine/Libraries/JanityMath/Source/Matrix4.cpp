@@ -1,9 +1,9 @@
-#include <JanityMath\Matrix4.h>
+#include <Matrix4.h>
 
 #include <cassert>
 #include <cmath>
 
-#include <JanityMath\MathUtils.h>
+#include <MathUtils.h>
 
 using namespace JanityMath;
 
@@ -94,9 +94,9 @@ Matrix4 Matrix4::transpose() const
 {
 	Matrix4 result;
 
-	for(uint c = 0; c < COLUMNS; ++c)
+	for(unsigned int c = 0; c < COLUMNS; ++c)
 	{
-		for(uint r = 0; r < ROWS; ++r)
+		for(unsigned int r = 0; r < ROWS; ++r)
 			result[c][r] = _columns[r][c];
 	}
 	return result;
@@ -276,9 +276,9 @@ Matrix4& Matrix4::operator =(const Matrix4& rhs)
 Matrix4 Matrix4::operator +(const Matrix4& rhs) const
 {
 	Matrix4 result;
-	for(uint c = 0; c < COLUMNS; ++c)
+	for(unsigned int c = 0; c < COLUMNS; ++c)
 	{
-		for(uint r = 0; r < ROWS; ++r)
+		for(unsigned int r = 0; r < ROWS; ++r)
 		{
 			result[c][r] = _columns[c][r] + rhs._columns[c][r];
 		}
@@ -295,9 +295,9 @@ const Matrix4& Matrix4::operator +=(const Matrix4& rhs)
 Matrix4 Matrix4::operator -(const Matrix4& rhs) const
 {
 	Matrix4 result;
-	for(uint c = 0; c < COLUMNS; ++c)
+	for(unsigned int c = 0; c < COLUMNS; ++c)
 	{
-		for(uint r = 0; r < ROWS; ++r)
+		for(unsigned int r = 0; r < ROWS; ++r)
 		{
 			result[c][r] = _columns[c][r] - rhs._columns[c][r];
 		}
@@ -381,7 +381,7 @@ Matrix4 Matrix4::operator /(const float divisor) const
 	
 	Matrix4 result;
 
-	for(uint c = 0; c < COLUMNS; ++c)
+	for(unsigned int c = 0; c < COLUMNS; ++c)
 	{
 		result[c] = _columns[c] / divisor;
 	}
@@ -438,15 +438,15 @@ Vector4 Matrix4::operator *(const Vector4& vector) const
 	);
 }
 
-Vector4 Matrix4::operator [](const uint index) 
+Vector4 Matrix4::operator [](const unsigned int index) 
 {
-	assert(index < (uint)COLUMNS);
+	assert(index < (unsigned int)COLUMNS);
 	return _columns[index];
 }
 
-const Vector4& Matrix4::operator [](const uint index) const
+const Vector4& Matrix4::operator [](const unsigned int index) const
 {
-	assert(index < (uint)COLUMNS);
+	assert(index < (unsigned int)COLUMNS);
 	return _columns[index];
 }
 
@@ -457,7 +457,7 @@ namespace JanityMath
 	{
 		Matrix4 result;
 
-		for(uint c = 0; c < Matrix4::COLUMNS; ++c)
+		for(unsigned int c = 0; c < Matrix4::COLUMNS; ++c)
 		{
 			result[c] = scalar * matrix._columns[c];
 		}
@@ -471,9 +471,9 @@ namespace JanityMath
 
 	std::ostream& operator <<(std::ostream& output, const Matrix4& matrix)
 	{
-		for(uint r = 0; r < Matrix4::ROWS; ++r)
+		for(unsigned int r = 0; r < Matrix4::ROWS; ++r)
 		{
-			for(uint c = 0; c < Matrix4::COLUMNS; ++c)
+			for(unsigned int c = 0; c < Matrix4::COLUMNS; ++c)
 			{
 				output << matrix._columns[c][r];
 				if(c < Matrix4::COLUMNS-1)

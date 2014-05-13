@@ -1,11 +1,12 @@
+
 #ifndef JANITYMATH_MATRIX4_H
 #define JANITYMATH_MATRIX4_H
 
 #include <iostream>
 
-#include <JanityMath\Matrix3.h>
-#include <JanityMath\Vector3.h>
-#include <JanityMath\Vector4.h>
+#include <Matrix3.h>
+#include <Vector3.h>
+#include <Vector4.h>
 
 namespace JanityMath
 {
@@ -13,8 +14,8 @@ namespace JanityMath
 	{
 	public:
 	//	Variables Start
-		static const uint COLUMNS = 4;
-		static const uint ROWS = 4;
+		static const unsigned int COLUMNS = 4;
+		static const unsigned int ROWS = 4;
 	//	Variables End
 
 	//	Constructors Start
@@ -82,8 +83,8 @@ namespace JanityMath
 
 		Vector4 operator *(const Vector4& vector) const;
 
-		Vector4 operator [](const uint index);
-		const Vector4& operator [](const uint index) const;
+		Vector4 operator [](const unsigned int index);
+		const Vector4& operator [](const unsigned int index) const;
 
 		friend Matrix4 operator *(const Matrix4& matrix, const float scalar);
 		friend Matrix4 operator *(const float scalar, const Matrix4& matrix);

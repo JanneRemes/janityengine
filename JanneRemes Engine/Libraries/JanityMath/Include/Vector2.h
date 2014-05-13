@@ -2,7 +2,7 @@
 #define JANITYMATH_VECTOR2_H
 
 #include <iostream>
-#include <JanityMath\MathUtils.h>
+//#include <MathUtils.h>
 namespace JanityMath
 {
 	class Matrix3;
@@ -15,7 +15,7 @@ namespace JanityMath
 	public:
 	//	Variables Start
 		float x, y;
-		static const uint COMPONENTS = 2;
+		static const unsigned int COMPONENTS = 2;
 	//	Variables End
 
 	//	Constructors Start
@@ -56,8 +56,8 @@ namespace JanityMath
 		bool operator== (const Vector2& rhs) const;
 		bool operator!= (const Vector2& rhs) const;
 
-		float& operator [](const uint index);
-		const float& operator [](const uint index) const;
+		float& operator [](const unsigned int index);
+		const float& operator [](const unsigned int index) const;
 
 		friend Vector2 operator *(const Vector2& vector, const float scalar);
 		friend Vector2 operator *(const float scalar, const Vector2& vector);

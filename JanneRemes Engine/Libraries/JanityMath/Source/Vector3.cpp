@@ -1,11 +1,11 @@
-#include <JanityMath\Vector3.h>
+#include <Vector3.h>
 #include <math.h>
 #include <cassert>
 
-#include <JanityMath\Matrix4.h>
-#include <JanityMath\Quaternion.h>
-#include <JanityMath\MathUtils.h>
-#include <JanityMath\Vector4.h>
+#include <Matrix4.h>
+#include <Quaternion.h>
+#include <MathUtils.h>
+#include <Vector4.h>
 using namespace JanityMath;
 
 Vector3::Vector3() : x(0), y(0), z(0) {}
@@ -42,6 +42,7 @@ Vector3 Vector3::cross(const Vector3& rhs) const
 	const float _z = x * rhs.y - y * rhs.x;
 	return Vector3(_x,_y,_z);
 }
+
 float Vector3::distance(const Vector3& rhs) const
 {
 	return 1;//(*this - vector).magnitude();
@@ -141,15 +142,15 @@ Vector3 Vector3::operator -() const
 	return Vector3(-x, -y, -z);
 }
 
-float& Vector3::operator [](const uint index)
+float& Vector3::operator [](const unsigned int index)
 {
-	assert (index < (uint)COMPONENTS);
+	assert (index < (unsigned int)COMPONENTS);
 	return (&x)[index];
 }
 
-const float& Vector3::operator [](const uint index) const
+const float& Vector3::operator [](const unsigned int index) const
 {
-	assert(index < (uint)COMPONENTS);
+	assert(index < (unsigned int)COMPONENTS);
 	return (&x)[index];
 }
 

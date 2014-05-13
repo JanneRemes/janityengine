@@ -2,8 +2,8 @@
 #define JANITYMATH_VECTOR4_H
 
 #include <iostream>
-#include <JanityMath\Vector2.h>
-#include <JanityMath\Vector3.h>
+#include <Vector2.h>
+#include <Vector3.h>
 
 namespace JanityMath
 {
@@ -14,7 +14,7 @@ namespace JanityMath
 	public:
 	//	Variables Start
 		float x,y,z,w;
-		static const uint COMPONENTS = 4;
+		static const unsigned int COMPONENTS = 4;
 	//	Variables End
 
 	//	Constructors Start
@@ -54,8 +54,8 @@ namespace JanityMath
 
 		Vector4 operator -();
 
-		float& operator [](const uint index);
-		const float& operator [](const uint index) const;
+		float& operator [](const unsigned int index);
+		const float& operator [](const unsigned int index) const;
 
 		bool operator ==(const Vector4& rhs) const;
 		bool operator !=(const Vector4& rhs) const;

@@ -129,7 +129,7 @@ Window::Window(HINSTANCE instance,const char* windowName,int width,int height)
 }
 
 
-LRESULT CALLBACK Window::wEventsProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+LRESULT CALLBACK Window::wEventsProc(HWND hWnd, unsigned int message, WPARAM wParam, LPARAM lParam)
 {
 	switch (message)
 	{

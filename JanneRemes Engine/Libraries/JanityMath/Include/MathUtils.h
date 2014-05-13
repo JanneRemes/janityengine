@@ -1,17 +1,28 @@
 #ifndef JANITYMATH_MATHUTILS_H
 #define JANITYMATH_MATHUTILS_H
 
+#include <Matrix4.h>
+#include <Rectangle.h>
 namespace JanityMath
 {
 //Variables Start
 		const double PI =3.1415926535897932;
-		typedef unsigned int uint;
+	
 //Variables End
 
 //Functions Start
 		double clamp(const double value, const double min, const double max);
 		float clamp(const float value, const float min, const float max);
 		int clamp(const int value, const int min, const int max);
+
+		Matrix4 createOrthographicProjection(const float left, const float right, const float top, const float bottom, const float nearZ, const float farZ);
+		Matrix4 createOrthographicProjection(const Rectangle& viewport, const float nearZ, const float farZ);
+		Matrix4 createPerspectiveProjection(const float left, const float right, const float top, const float bottom, const float nearZ, const float farZ);
+		Matrix4 createPerspectiveProjection(const float aspectRatio, const float fieldOfViewY, const float nearZ, const float farZ);
+		Matrix4 lookAt(const Vector3& fromPosition, const Vector3& toPosition, const Vector3& upDirection);
+		Matrix4 FPSview(Vector3 cameraPosition, float pitch, float yaw);
+	
+		
 
 		double minimum(double A, double B);
 		float minimum(float A, float B);
@@ -24,7 +35,7 @@ namespace JanityMath
 		bool equals(const double valueA, const double valueB, const double threshold = 0.001);
 		bool equals(const float valueA, const float valueB, const float threshold = 0.001f);
 
-		void initializeRandom(uint seed = 0);
+		void initializeRandom(unsigned int seed = 0);
 		double random();
 		double random(const double min, const double max);
 		int random(const int min, const int max);

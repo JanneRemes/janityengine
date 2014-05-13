@@ -1,10 +1,10 @@
-#include <JanityMath\Vector4.h>
+#include <Vector4.h>
 
 #include <cassert>
 #include <cmath>
 
-#include <JanityMath\Quaternion.h>
-#include <JanityMath\MathUtils.h>
+#include <Quaternion.h>
+#include <MathUtils.h>
 using namespace JanityMath;
 
 Vector4::Vector4() : x(0), y(0), z(0), w(0) { }
@@ -145,15 +145,15 @@ Vector4 Vector4::operator -()
 	return Vector4(-x,-y,-z,-w);
 }
 
-float& Vector4::operator [](const uint index)
+float& Vector4::operator [](const unsigned int index)
 {
-	assert (index < (uint)COMPONENTS);
+	assert (index < (unsigned int)COMPONENTS);
 	return (&x)[index];
 }
 
-const float& Vector4::operator [](const uint index) const
+const float& Vector4::operator [](const unsigned int index) const
 {
-	assert (index < (uint)COMPONENTS);
+	assert (index < (unsigned int)COMPONENTS);
 	return (&x)[index];
 }
 

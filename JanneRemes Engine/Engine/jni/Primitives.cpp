@@ -2,30 +2,46 @@
 
 using namespace KaMo;
 
-Primitives::Model Primitives::Cube;
+Primitives::Model Primitives::Triangle;
 Primitives::Model Primitives::Plane;
+Primitives::Model Primitives::Cube;
 Primitives::Model Primitives::Sphere;
-Primitives::Model Primitives::Moon;
+Primitives::Model Primitives::Pyramid;
 
 Primitives::Primitives()
 {
-	Load("!cube.obj");
-	Cube.vertices = vertices;
-	Cube.uvs = uvs;
-	Cube.normals = normals;
+	Load("Primitives/triangle.obj");
+	Triangle.vertices = vertices;
+	Triangle.uvs = uvs;
+	Triangle.normals = normals;
 	Clear();
-
-	Load("Plane.obj");
+	
+	Load("Primitives/Plane.obj");
 	Plane.vertices = vertices;
 	Plane.uvs = uvs;
 	Plane.normals = normals;
 	Clear();
 
-	Load("Scene02/planet.obj");
+	Load("Primitives/cube.obj");
+	Cube.vertices = vertices;
+	Cube.uvs = uvs;
+	Cube.normals = normals;
+	Clear();
+
+	Load("Primitives/sphere.obj");
 	Sphere.vertices = vertices;
 	Sphere.uvs = uvs;
 	Sphere.normals = normals;
 	Clear();
+
+	Load("Primitives/pyramid.obj");
+	Pyramid.vertices = vertices;
+	Pyramid.uvs = uvs;
+	Pyramid.normals = normals;
+	Clear();
+
+	
+	
 }
 
 Primitives::~Primitives()
@@ -35,9 +51,11 @@ Primitives::~Primitives()
 	delete &uvs;
 	delete &normals;
 
-	delete &Cube;
+	delete &Triangle;
 	delete &Plane;
+	delete &Cube;
 	delete &Sphere;
+	delete &Pyramid;
 }
 
 //PUBLIC

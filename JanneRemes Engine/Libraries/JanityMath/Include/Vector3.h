@@ -1,7 +1,7 @@
 #ifndef JANITYMATH_VECTOR3_H
 #define JANITYMATH_VECTOR3_H
 #include <iostream>
-#include <JanityMath\Vector2.h>
+#include <Vector2.h>
 
 
 //http://courses.cms.caltech.edu/cs11/material/cpp/donnie/cpp-ops.html
@@ -15,14 +15,14 @@ namespace JanityMath
 	public:
 	//	Variables Start
 		float x,y,z;
-		static const uint COMPONENTS = 3;
+		static const unsigned int COMPONENTS = 3;
 	//	Variables End
 	
 	//	Constructors Start
 		Vector3();
 		explicit Vector3(float value);
 		Vector3(float X, float Y, float Z);
-		Vector3(const Vector2& vector, const float z);
+		Vector3(const JanityMath::Vector2& vector, const float z);
 		Vector3(const Vector3& other);
 		~Vector3();
 	//	Constructors End
@@ -55,8 +55,8 @@ namespace JanityMath
 		
 		Vector3 operator -() const;
 
-		float& operator [](const uint index);
-		const float& operator [](const uint index) const;
+		float& operator [](const unsigned int index);
+		const float& operator [](const unsigned int index) const;
 
 		bool operator ==(const Vector3& rhs) const;
 		bool operator !=(const Vector3& rhs) const;

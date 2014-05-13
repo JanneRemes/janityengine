@@ -2,8 +2,8 @@
 #define JANITYMATH_MATRIX3
 
 #include <iostream>
-#include <JanityMath\Vector2.h>
-#include <JanityMath\Vector3.h>
+#include <Vector2.h>
+#include <Vector3.h>
 
 //http://euclideanspace.com/
 namespace JanityMath
@@ -12,8 +12,8 @@ namespace JanityMath
 	{
 	public:
 	//  Variables Start
-		static const uint COLUMNS = 3;
-		static const uint ROWS = 3;
+		static const unsigned int COLUMNS = 3;
+		static const unsigned int ROWS = 3;
 	//  Variables End
 
 	//  Constructors Start
@@ -75,8 +75,8 @@ namespace JanityMath
 		Matrix3 operator /(const float divisor);
 		const Matrix3& operator /=(const float divisor);
 
-		Vector3& operator [](const uint index);
-		const Vector3& operator [](const uint index) const;
+		Vector3& operator [](const unsigned int index);
+		const Vector3& operator [](const unsigned int index) const;
 
 
 		friend Matrix3 operator *(const Matrix3& matrix, const float scalar);

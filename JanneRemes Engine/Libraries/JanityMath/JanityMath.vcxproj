@@ -78,6 +78,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Main.cpp" />
     <ClCompile Include="Source\MathUtils.cpp" />
     <ClCompile Include="Source\Matrix3.cpp" />
     <ClCompile Include="Source\Matrix4.cpp" />
@@ -89,18 +90,18 @@
     <ClCompile Include="Source\Vector4.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Include\JanityMath\JanityMath.h" />
-    <ClInclude Include="Include\JanityMath\MathUtils.h" />
-    <ClInclude Include="Include\JanityMath\Matrix.h" />
-    <ClInclude Include="Include\JanityMath\Matrix3.h" />
-    <ClInclude Include="Include\JanityMath\Matrix4.h" />
-    <ClInclude Include="Include\JanityMath\Point.h" />
-    <ClInclude Include="Include\JanityMath\Quaternion.h" />
-    <ClInclude Include="Include\JanityMath\Rectangle.h" />
-    <ClInclude Include="Include\JanityMath\Vector.h" />
-    <ClInclude Include="Include\JanityMath\Vector2.h" />
-    <ClInclude Include="Include\JanityMath\Vector3.h" />
-    <ClInclude Include="Include\JanityMath\Vector4.h" />
+    <ClInclude Include="Include\JanityMath.h" />
+    <ClInclude Include="Include\MathUtils.h" />
+    <ClInclude Include="Include\Matrix.h" />
+    <ClInclude Include="Include\Matrix3.h" />
+    <ClInclude Include="Include\Matrix4.h" />
+    <ClInclude Include="Include\Point.h" />
+    <ClInclude Include="Include\Quaternion.h" />
+    <ClInclude Include="Include\Rectangle.h" />
+    <ClInclude Include="Include\Vector.h" />
+    <ClInclude Include="Include\Vector2.h" />
+    <ClInclude Include="Include\Vector3.h" />
+    <ClInclude Include="Include\Vector4.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

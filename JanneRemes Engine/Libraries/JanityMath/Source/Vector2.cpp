@@ -1,14 +1,14 @@
-#include <JanityMath\Vector2.h>
+#include <Vector2.h>
 
 #include <math.h>
 #include <cassert>
 
-#include <JanityMath\MathUtils.h>
-#include <JanityMath\Vector3.h>
-#include <JanityMath\Vector4.h>
-#include <JanityMath\Matrix3.h>
-#include <JanityMath\Matrix4.h>
-#include <JanityMath\Quaternion.h>
+#include <MathUtils.h>
+#include <Vector3.h>
+#include <Vector4.h>
+#include <Matrix3.h>
+#include <Matrix4.h>
+#include <Quaternion.h>
 
 using namespace JanityMath;
 
@@ -128,15 +128,15 @@ const Vector2& Vector2::operator /=(const float divisor)
 	return *this;
 }
 
-float& Vector2::operator [](const uint index)
+float& Vector2::operator [](const unsigned int index)
 {
-	assert(index < (uint)COMPONENTS);
+	assert(index < (unsigned int)COMPONENTS);
 	return (&x)[index];
 }
 
-const float& Vector2::operator [](const uint index) const
+const float& Vector2::operator [](const unsigned int index) const
 {
-	assert(index < (uint)COMPONENTS);
+	assert(index < (unsigned int)COMPONENTS);
 	return (&x)[index];
 }
 

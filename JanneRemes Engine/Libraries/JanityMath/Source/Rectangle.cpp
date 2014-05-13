@@ -1,5 +1,5 @@
-#include <JanityMath\Rectangle.h>
-#include <JanityMath\MathUtils.h>
+#include <Rectangle.h>
+#include <MathUtils.h>
 
 using namespace JanityMath;
 

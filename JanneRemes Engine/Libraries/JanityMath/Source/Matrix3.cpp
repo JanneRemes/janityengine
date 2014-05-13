@@ -1,9 +1,9 @@
-#include <JanityMath\Matrix3.h>
+#include <Matrix3.h>
 
 #include <cassert>
 #include <cmath>
 
-#include <JanityMath\MathUtils.h>
+#include <MathUtils.h>
 
 using namespace JanityMath;
 
@@ -76,9 +76,9 @@ Matrix3 Matrix3::transpose() const
 {
 	Matrix3 result;
 
-	for(uint c = 0; c < COLUMNS; ++c)
+	for(unsigned int c = 0; c < COLUMNS; ++c)
 	{
-		for(uint r = 0; r < ROWS; ++r)
+		for(unsigned int r = 0; r < ROWS; ++r)
 		{
 			result._columns[c][r] = _columns[r][c];
 		}
@@ -179,9 +179,9 @@ Matrix3& Matrix3::operator =(const Matrix3& rhs)
 Matrix3 Matrix3::operator +(const Matrix3& rhs) const
 {
 	Matrix3 result;
-	for(uint c = 0; c < COLUMNS; ++c)
+	for(unsigned int c = 0; c < COLUMNS; ++c)
 	{
-		for(uint r = 0; r < ROWS; ++r)
+		for(unsigned int r = 0; r < ROWS; ++r)
 		{
 			result._columns[c][r] = _columns[c][r] + rhs._columns[c][r];
 		}
@@ -197,9 +197,9 @@ const Matrix3& Matrix3::operator +=(const Matrix3& rhs)
 Matrix3 Matrix3::operator -(const Matrix3& rhs) const
 {
 	Matrix3 result;
-	for(uint c = 0; c < COLUMNS; ++c)
+	for(unsigned int c = 0; c < COLUMNS; ++c)
 	{
-		for(uint r = 0; r < ROWS; ++r)
+		for(unsigned int r = 0; r < ROWS; ++r)
 		{
 			result._columns[c][r] = _columns[c][r] - rhs._columns[c][r];
 		}
@@ -276,7 +276,7 @@ Vector3 Matrix3::operator *(const Vector3& vector) const
 
 bool Matrix3::operator ==(const Matrix3& rhs) const
 {
-	for(uint c = 0; c < COLUMNS; ++c)
+	for(unsigned int c = 0; c < COLUMNS; ++c)
 	{
 		if(_columns[c] != rhs._columns[c])
 			return false;
@@ -294,7 +294,7 @@ Matrix3 Matrix3::operator /(const float divisor)
 	assert(!equals(divisor, 0.0f));
 	Matrix3 result;
 
-	for(uint c = 0; c < COLUMNS; ++c)
+	for(unsigned int c = 0; c < COLUMNS; ++c)
 	{
 		result[c] = _columns[c] / divisor;
 	}
@@ -308,14 +308,14 @@ const Matrix3& Matrix3::operator /=(const float divisor)
 }
 
 
-Vector3& Matrix3::operator [](const uint index)
+Vector3& Matrix3::operator [](const unsigned int index)
 {
-	assert(index < (uint)COLUMNS);
+	assert(index < (unsigned int)COLUMNS);
 	return _columns[index];
 }
-const Vector3& Matrix3::operator [](const uint index) const
+const Vector3& Matrix3::operator [](const unsigned int index) const
 {
-	assert(index < (uint) COLUMNS);
+	assert(index < (unsigned int) COLUMNS);
 	return _columns[index];
 }
 
@@ -325,7 +325,7 @@ namespace JanityMath
 	Matrix3 operator *(const Matrix3& matrix, const float scalar)
 	{
 		Matrix3 result;
-		for(uint c = 0; c < Matrix3::COLUMNS; ++c)
+		for(unsigned int c = 0; c < Matrix3::COLUMNS; ++c)
 		{
 			result[c] = scalar * matrix._columns[c];
 		}
@@ -344,9 +344,9 @@ namespace JanityMath
 
 	std::ostream& operator <<(std::ostream& output, const Matrix3& matrix)
 	{
-		for(uint r = 0; r < Matrix3::ROWS; ++r)
+		for(unsigned int r = 0; r < Matrix3::ROWS; ++r)
 		{
-			for(uint c = 0; c < Matrix3::COLUMNS; ++c)
+			for(unsigned int c = 0; c < Matrix3::COLUMNS; ++c)
 			{
 				output << matrix._columns[c][r];
 
