@@ -1,10 +1,10 @@
-#include <Vector4.h>
+#include <JanityMath\Vector4.h>
 
 #include <cassert>
 #include <cmath>
 
-#include <Quaternion.h>
-#include <MathUtils.h>
+#include <JanityMath\Quaternion.h>
+#include <JanityMath\MathUtils.h>
 using namespace JanityMath;
 
 Vector4::Vector4() : x(0), y(0), z(0), w(0) { }

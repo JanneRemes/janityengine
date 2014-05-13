@@ -1,8 +1,8 @@
 #ifndef JANITYMATH_MATHUTILS_H
 #define JANITYMATH_MATHUTILS_H
 
-#include <Matrix4.h>
-#include <Rectangle.h>
+#include <JanityMath\Matrix4.h>
+#include <JanityMath\Rectangle.h>
 namespace JanityMath
 {
 //Variables Start

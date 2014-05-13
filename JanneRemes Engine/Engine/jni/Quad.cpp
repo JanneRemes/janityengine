@@ -1,7 +1,7 @@
 #include <Quad.h>
 #include <cmath>
 
-using namespace KaMo;
+using namespace JanityEngine;
 
 float* Quad::projection = NULL;
 

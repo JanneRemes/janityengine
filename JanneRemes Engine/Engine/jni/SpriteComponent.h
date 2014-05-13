@@ -5,7 +5,7 @@
 
 
 
-namespace KaMo
+namespace JanityEngine
 {
 	
 	class SpriteComponent : Sprite

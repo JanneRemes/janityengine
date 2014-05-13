@@ -3,7 +3,7 @@
 #include <Debug.h>
 #include <Camera.h>
 
-using namespace KaMo;
+using namespace JanityEngine;
 
 Mesh::Mesh(int X, int Y, int Z, float scale, const char* objPath)
 {

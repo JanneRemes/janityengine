@@ -1,7 +1,7 @@
 #include <Camera.h>
 #include <Debug.h>
 
-using namespace KaMo;
+using namespace JanityEngine;
 
 glm::mat4 Camera::_view        =	glm::mat4(0);
 glm::mat4 Camera::_projection  =	glm::mat4(0);

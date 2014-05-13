@@ -1,5 +1,5 @@
 #include <GameObject.h>
-using namespace KaMo;
+using namespace JanityEngine;
 
 GameObject::GameObject()
 : sprite(NULL),

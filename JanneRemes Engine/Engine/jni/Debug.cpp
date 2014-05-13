@@ -5,7 +5,7 @@
 #include <iostream>
 #endif
 
-using namespace KaMo;
+using namespace JanityEngine;
 
 Debug::Debug()
 {

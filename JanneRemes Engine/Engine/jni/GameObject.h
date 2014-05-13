@@ -7,7 +7,7 @@
 #include <glm\glm.hpp>
 #include <Mesh.h>
 
-namespace KaMo
+namespace JanityEngine
 {
     struct Transform
 	{

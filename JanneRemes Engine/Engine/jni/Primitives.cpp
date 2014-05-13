@@ -1,6 +1,6 @@
 #include <Primitives.h>
 
-using namespace KaMo;
+using namespace JanityEngine;
 
 Primitives::Model Primitives::Triangle;
 Primitives::Model Primitives::Plane;

@@ -3,7 +3,7 @@
 #include <FileReader.h>
 #include <cmath>
 
-using namespace KaMo;
+using namespace JanityEngine;
 Engine::Engine() 
 { 
 	Init();

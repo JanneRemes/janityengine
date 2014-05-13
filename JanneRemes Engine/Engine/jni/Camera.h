@@ -6,7 +6,7 @@
 #include <glm\ext.hpp>
 //#include <glm\gtc\matrix_transform.hpp>
 
-namespace KaMo
+namespace JanityEngine
 {
 	class Camera
 	{

@@ -11,7 +11,7 @@
 #include <Scene03.h>
 #include <Scene04.h>
 
-namespace KaMo
+namespace JanityEngine
 {
 	class Demo
 	{

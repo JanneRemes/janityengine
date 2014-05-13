@@ -6,7 +6,7 @@
 #include <Shader.h>
 #include <GameObject.h>
 
-namespace KaMo
+namespace JanityEngine
 {
 	class Scene03
 	{

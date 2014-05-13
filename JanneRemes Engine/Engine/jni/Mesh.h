@@ -11,7 +11,7 @@
 #include <glm\glm.hpp>
 #include <glm\ext.hpp>
 
-namespace KaMo
+namespace JanityEngine
 {
 	class Mesh
 	{

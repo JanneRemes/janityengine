@@ -6,7 +6,7 @@
 #include <Texture.h>
 #include <Quad.h>
 
-namespace KaMo
+namespace JanityEngine
 {
 	class ContentManager
 	{

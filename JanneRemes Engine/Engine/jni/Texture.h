@@ -6,7 +6,7 @@
 #include <Debug.h>
 #include <FileReader.h>
 
-namespace KaMo
+namespace JanityEngine
 {
 	class Texture
 	{

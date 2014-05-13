@@ -6,7 +6,7 @@
 //RESTRUCTURE
 #include "sndfile/sndfile.h"
 
-using namespace KaMo;
+using namespace JanityEngine;
 
 
 Sound::Sound(const std::string& fileName)

@@ -2,7 +2,7 @@
 #define JANITYMATH_RECTANGLE_H
 
 #include <iostream>
-#include <Point.h>
+#include <JanityMath\Point.h>
 
 namespace JanityMath
 {

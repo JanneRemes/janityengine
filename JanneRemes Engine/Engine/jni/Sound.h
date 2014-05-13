@@ -9,7 +9,7 @@
 
 #include <vector>
 
-namespace KaMo
+namespace JanityEngine
 {
 	class Sound
 	{

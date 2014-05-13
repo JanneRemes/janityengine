@@ -2,7 +2,7 @@
 #include <cmath>
 
 
-using namespace KaMo;
+using namespace JanityEngine;
 
 Game::Game(float _desiredWidth,float _desiredHeight,float width,float height)
 {

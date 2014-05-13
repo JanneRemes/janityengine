@@ -8,7 +8,7 @@
 #include <vector>
 #include <string>
 
-namespace KaMo
+namespace JanityEngine
 {
 	
 	class Primitives

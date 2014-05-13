@@ -2,7 +2,7 @@
 #include <cmath>
 #include <Debug.h>
 
-using namespace KaMo;
+using namespace JanityEngine;
 using namespace glm;
 
 Scene02::Scene02(float w, float h)

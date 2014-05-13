@@ -1,12 +1,14 @@
-#include <MathUtils.h>
+#include <JanityMath\MathUtils.h>
+
 #include <cmath>
 #include <ctime>
 #include <cstdlib>
 
+#include <JanityMath\Vector4.h>
+
 // https://code.google.com/p/slmath/
 // simd
 
-#include <Vector4.h>
 namespace JanityMath
 {
 	const double TO_RADIANS_FACTOR = PI / 180.0;

@@ -2,7 +2,7 @@
 #include <Util.h>
 #include <Camera.h>
 
-using namespace KaMo;
+using namespace JanityEngine;
 
 Demo::Demo(float w, float h)
 {

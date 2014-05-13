@@ -1,6 +1,6 @@
 #include <Scene04.h>
 
-using namespace KaMo;
+using namespace JanityEngine;
 
 Scene04::Scene04(float w, float h)
 {

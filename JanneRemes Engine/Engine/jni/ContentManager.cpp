@@ -1,5 +1,5 @@
 #include <ContentManager.h>
-using namespace KaMo;
+using namespace JanityEngine;
 
 ContentManager::ContentManager()
 {

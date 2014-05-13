@@ -2,7 +2,7 @@
 #ifndef OBJECT_H
 #define OBJECT_H
 #include <iostream>
-namespace KaMo
+namespace JanityEngine
 {
 	class Object
 	{

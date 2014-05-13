@@ -5,7 +5,7 @@
 #include <Quad.h>
 #include <Shader.h>
 
-namespace KaMo
+namespace JanityEngine
 {
 	class Scene01
 	{

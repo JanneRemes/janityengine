@@ -1,5 +1,5 @@
 #include <Texture.h>
-using namespace KaMo;
+using namespace JanityEngine;
 
 //public
 Texture::Texture(const char* Filename)

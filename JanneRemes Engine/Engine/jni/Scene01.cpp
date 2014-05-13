@@ -1,7 +1,7 @@
 #include <Scene01.h>
 #include <cmath>
 
-using namespace KaMo;
+using namespace JanityEngine;
 
 Scene01::Scene01(float w, float h)
 {

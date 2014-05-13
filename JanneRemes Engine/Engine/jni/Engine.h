@@ -10,7 +10,7 @@
 #include <SoundManager.h>
 #include <ObjLoader.h>
 
-namespace KaMo
+namespace JanityEngine
 {
 	class Engine
 	{
@@ -18,8 +18,6 @@ namespace KaMo
 
 		Engine();
 		~Engine(); 
-		
-	
 	
 		virtual void LoadContent();	//TODO: points to content manager, 
 		virtual void Init();

@@ -9,7 +9,7 @@
 #include <Camera.h>
 #include <Primitives.h>
 
-namespace KaMo
+namespace JanityEngine
 {
 	class Scene02
 	{

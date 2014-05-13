@@ -11,7 +11,7 @@
 
 #include <glm\glm.hpp>
 
-namespace KaMo {
+namespace JanityEngine {
 	class ObjLoader
 	{
 	public:

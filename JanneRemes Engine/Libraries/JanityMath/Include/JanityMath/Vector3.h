@@ -1,7 +1,7 @@
 #ifndef JANITYMATH_VECTOR3_H
 #define JANITYMATH_VECTOR3_H
 #include <iostream>
-#include <Vector2.h>
+#include <JanityMath\Vector2.h>
 
 
 //http://courses.cms.caltech.edu/cs11/material/cpp/donnie/cpp-ops.html

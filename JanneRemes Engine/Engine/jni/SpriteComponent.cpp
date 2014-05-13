@@ -1,5 +1,5 @@
 #include <SpriteComponent.h>
-using namespace KaMo;
+using namespace JanityEngine;
 
 SpriteComponent::SpriteComponent()
 {

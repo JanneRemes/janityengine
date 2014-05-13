@@ -1,12 +1,12 @@
-#include <Quaternion.h>
+#include <JanityMath\Quaternion.h>
 
 #include <cassert>
 #include <cfloat>
 #include <cmath>
 
-#include <MathUtils.h>
-#include <Matrix3.h>
-#include <Matrix4.h>
+#include <JanityMath\MathUtils.h>
+#include <JanityMath\Matrix3.h>
+#include <JanityMath\Matrix4.h>
 
 using namespace JanityMath;
 

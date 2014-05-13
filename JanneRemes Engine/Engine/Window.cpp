@@ -4,7 +4,7 @@
 #include <OpenGL.h>
 #include <Util.h>
 #pragma comment(lib, "opengl32.lib")
-using namespace KaMo;
+using namespace JanityEngine;
 
 HWND Window::handle;
 HGLRC Window::OGLcontext;

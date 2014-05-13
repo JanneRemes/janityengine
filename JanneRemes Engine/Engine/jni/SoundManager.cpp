@@ -1,7 +1,7 @@
 #include <SoundManager.h>
 #include <Debug.h>
 
-using namespace KaMo;
+using namespace JanityEngine;
 
 
 bool SoundManager::initialized = false;

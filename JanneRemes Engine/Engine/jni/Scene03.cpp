@@ -1,7 +1,7 @@
 #include <Scene03.h>
 #include <cmath>
 #include <Texture.h> // test can delete later
-using namespace KaMo;
+using namespace JanityEngine;
 
 Scene03::Scene03(float w, float h)
 {

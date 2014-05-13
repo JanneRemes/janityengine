@@ -4,7 +4,7 @@
 
 #include <Win32toAndroid.h>
 
-namespace KaMo
+namespace JanityEngine
 {
 	class DeviceManager
 	{
