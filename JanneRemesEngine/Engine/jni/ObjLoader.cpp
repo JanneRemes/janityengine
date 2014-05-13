@@ -20,7 +20,7 @@ bool ObjLoader::LoadOBJ(const char* path, std::vector<Vector3> & out_vertices,
 									   )
 {
 	OpenFile(path);
-	//ParseData();
+	ParseData();
 	
 	for(unsigned int i=0; i<vertexIndices.size(); i++)
 	{

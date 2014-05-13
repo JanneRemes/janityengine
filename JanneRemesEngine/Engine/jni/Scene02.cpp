@@ -160,6 +160,9 @@ void Scene02::Initialize()
 
 	sine = 0;
 	keyPressed = false;
-	//camera = Camera::CreateCamera(glm::vec3(0,10,30), glm::vec3(0,0,0), glm::vec3(0,1,0));
+
+
+	camera = Camera::MainCamera();
+	camera->Move(Vector3(0,10,30), Vector3(0,0,0), Vector3(0,1,0));
 
 }

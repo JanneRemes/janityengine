@@ -67,10 +67,10 @@ void Scene01::Draw()
 
 void Scene01::SetProjection()
 {
-	//glMatrixMode(GL_PROJECTION);
-	//glLoadIdentity();
-	//glViewport(0,0,desiredWidth, desiredHeight);
-	//glFrustum(0,desiredWidth,0,desiredHeight,-1,1);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	glViewport(0,0,desiredWidth, desiredHeight);
+	glFrustum(0,desiredWidth,0,desiredHeight,-1,1);
 	bg->SetProjection(desiredWidth, desiredHeight);
 }
 

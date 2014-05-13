@@ -18,7 +18,7 @@ namespace JanityEngine
 	public:
 		Mesh(int X, int Y, int Z, float scale, const char* _objPath);
 		Mesh(int Size, float* _data);
-		//Mesh(std::vector<Vector3> _vertices, std::vector<Vector2> _uvs, std::vector<Vector3> _normals);
+		Mesh(std::vector<Vector3> _vertices, std::vector<Vector2> _uvs, std::vector<Vector3> _normals);
 		~Mesh();
 		
 		void Move(float X, float Y, float Z);

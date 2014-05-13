@@ -90,6 +90,21 @@
     <ClCompile Include="jni\Demo.cpp">
       <Filter>Demo</Filter>
     </ClCompile>
+    <ClCompile Include="jni\Scene01.cpp">
+      <Filter>Demo</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\Scene02.cpp">
+      <Filter>Demo</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\Scene03.cpp">
+      <Filter>Demo</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\Scene04.cpp">
+      <Filter>Demo</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\Primitives.cpp">
+      <Filter>Demo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OpenGL.h">
@@ -153,6 +168,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="jni\Demo.h">
+      <Filter>Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\Scene01.h">
+      <Filter>Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\Scene02.h">
+      <Filter>Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\Scene03.h">
+      <Filter>Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\Scene04.h">
+      <Filter>Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\Primitives.h">
       <Filter>Demo</Filter>
     </ClInclude>
   </ItemGroup>

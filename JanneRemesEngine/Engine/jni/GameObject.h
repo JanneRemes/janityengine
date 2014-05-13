@@ -11,10 +11,6 @@ using namespace JanityMath;
 
 namespace JanityEngine
 {
-	struct pos
-	{
-		float x,y,z;
-	};
     struct Transform
 	{
 		Vector3 position;
@@ -33,7 +29,7 @@ namespace JanityEngine
 	class Sprite;
 	class GameObject : Object
 	{
-	//public:
+	public:
 		GameObject(); //empty gameObject
 		//Mesh
 		GameObject(Mesh* Mesh);

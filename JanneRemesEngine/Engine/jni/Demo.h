@@ -34,10 +34,10 @@ namespace JanityEngine
 
 		void CreateScenes();
 
-		//Scene01* scene1;
-		//Scene02* scene2;
-		//Scene03* scene3;
-		//Scene04* scene4;
+		Scene01* scene1;
+		Scene02* scene2;
+		Scene03* scene3;
+		Scene04* scene4;
 
 		Sound* bgMusic;
 		Sound* soundEffect[2];

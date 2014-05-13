@@ -30,7 +30,7 @@ Mesh::Mesh(int Size, float* _data)
 	Data = (float*)malloc(Size*sizeof(float)*8);
 
 	Debug::WriteLog("_data mesh: %d\n", _data);
-	//Data = _data;
+	Data = _data;
 	Debug::WriteLog("Data mesh: %d\n", Data);
 
 	_size = Size;
@@ -70,7 +70,7 @@ Mesh::Mesh(int Size, float* _data)
 
 	model.identity();//glm::mat4(1.0f);
 }
-/*Mesh::Mesh(std::vector<Vector3> _vertices, std::vector<Vector2> _uvs, std::vector<Vector3> _normals)
+Mesh::Mesh(std::vector<Vector3> _vertices, std::vector<Vector2> _uvs, std::vector<Vector3> _normals)
 {
 	x = 0;
 	y = 0;
@@ -88,7 +88,7 @@ Mesh::Mesh(int Size, float* _data)
 	Rotate(0,1,1,1);
 
 	model.identity(); // glm::mat4(1.0f);
-}*/
+}
 
 Mesh::~Mesh()
 {
@@ -100,8 +100,8 @@ Mesh::~Mesh()
 void Mesh::LoadObj(const char* _objPath)
 {
 	obj = new ObjLoader();
-//	bool a = obj->LoadOBJ(_objPath, vertices, uvs, normals);
-//	assert(a==1);
+	bool a = obj->LoadOBJ(_objPath, vertices, uvs, normals);
+	assert(a==1);
 	delete obj;
 }
 void Mesh::HandleData()
@@ -170,7 +170,7 @@ void Mesh::Rotate(float r, int X, int Y, int Z)
 	rX = X;
 	rY = Y;
 	rZ = Z;
-	rotation.createRotationAxis(Vector3(X,Y,Z), r);
+	rotation.createRotationAxis(Vector3(X,Y,Z).normal(), r);
 }
 
 void Mesh::SetTexture(const char* Texture)

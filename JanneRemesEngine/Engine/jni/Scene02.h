@@ -37,7 +37,7 @@ namespace JanityEngine
 		Mesh* luna3;
 		Mesh* luna4;
 		Mesh* luna5;
-	
+		Camera* camera;
 
 		float sine;
 		bool keyPressed;

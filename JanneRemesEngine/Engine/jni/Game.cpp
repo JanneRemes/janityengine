@@ -58,10 +58,7 @@ void Game::CreateObjects()
 
 	glViewport((int)blackBarH, (int)blackBarV,(int)w,(int)h); // Sets up the OpenGL viewport
 	
-	//make the shader program; 
-	//shader = new Shader();
-	//GLuint Program = shader->createShader("Shaders\\shad.frag","Shaders\\shad.vert");
-	//delete shader;
+
 	
 	demo = new Demo(desiredWidth, desiredHeight);
 
