@@ -2,6 +2,8 @@
 #include <Util.h>
 #include <Camera.h>
 
+#include <JanityMath\JanityMath.h>
+using namespace JanityMath;
 using namespace JanityEngine;
 
 Demo::Demo(float w, float h)
@@ -14,16 +16,19 @@ Demo::Demo(float w, float h)
 	sceneTimer = 0.0f;
 
 	keyPressed = false;
+	std::vector<Vector3>*  out_vertices = new std::vector<Vector3>();
+	out_vertices->push_back(Vector3::zero());
+
 }
 
 Demo::~Demo(void)
 {
-	delete _primitives;
+	//delete _primitives;
 
-	delete scene1;
-	delete scene2;
-	delete scene3;
-	delete scene4;
+	//delete scene1;
+	////delete scene2;
+	//delete scene3;
+	//delete scene4;
 }
 
 // PUBLIC
@@ -44,20 +49,20 @@ void Demo::Update(float dt)
 	switch(activeScene)
 	{
 	case 1:
-		scene1->SetProjection();
-		scene1->Update(dt);
+		//scene1->SetProjection();
+		//scene1->Update(dt);
 		break;
 	case 2:
-		scene2->SetProjection();
-		scene2->Update(dt);
+		//scene2->SetProjection();
+		//scene2->Update(dt);
 		break;
 	case 3:
-		scene3->SetProjection();
-		scene3->Update(dt);
+		//scene3->SetProjection();
+		//scene3->Update(dt);
 		break;
 	case 4:
-		scene4->SetProjection();
-		scene4->Update(dt);
+		//scene4->SetProjection();
+		//scene4->Update(dt);
 		break;
 	}
 	/*
@@ -86,16 +91,16 @@ void Demo::Draw()
 	switch(activeScene)
 	{
 	case 1:
-		scene1->Draw();
+		//scene1->Draw();
 		break;
 	case 2:
-		scene2->Draw();
+		//scene2->Draw();
 		break;
 	case 3:
-		scene3->Draw();
+		//scene3->Draw();
 		break;
 	case 4:
-		scene4->Draw();
+		//scene4->Draw();
 		break;
 	}
 }
@@ -105,8 +110,9 @@ void Demo::Draw()
 
 void Demo::CreateScenes()
 {
-	_primitives = new Primitives();
-	camera = Camera::CreateCamera(glm::vec3(0,10,30), glm::vec3(0,0,0), glm::vec3(0,1,0));
+	/*_primitives = new Primitives();
+	camera = Camera::MainCamera();
+	camera->Move(Vector3(0,10,30), Vector3(0,0,0), Vector3(0,1,0));*/
 
 	//bgMusic = Sound::Load(Util::resourcePath + "media/kajak.ogg");
 	//bgMusic->Loop(AL_TRUE);
@@ -115,10 +121,10 @@ void Demo::CreateScenes()
 	//soundEffect[1] = Sound::Load(Util::resourcePath + "media/ruby.ogg");
 	//soundEffect[1]->Loop(AL_FALSE);
 	
-	scene1 = new Scene01(desiredWidth, desiredHeight);
-	scene2 = new Scene02(desiredWidth, desiredHeight);
-	scene3 = new Scene03(desiredWidth, desiredHeight);
-	scene4 = new Scene04(desiredWidth, desiredHeight);
+	//scene1 = new Scene01(desiredWidth, desiredHeight);
+	//scene2 = new Scene02(desiredWidth, desiredHeight);
+	//scene3 = new Scene03(desiredWidth, desiredHeight);
+	//scene4 = new Scene04(desiredWidth, desiredHeight);
 
 	//bgMusic->Play(40);
 }

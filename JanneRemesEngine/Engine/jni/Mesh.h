@@ -8,8 +8,8 @@
 #include <ObjLoader.h>
 
 #include <vector>
-#include <glm\glm.hpp>
-#include <glm\ext.hpp>
+#include <JanityMath\JanityMath.h>
+using namespace JanityMath;
 
 namespace JanityEngine
 {
@@ -18,11 +18,11 @@ namespace JanityEngine
 	public:
 		Mesh(int X, int Y, int Z, float scale, const char* _objPath);
 		Mesh(int Size, float* _data);
-		Mesh(std::vector<glm::vec3> _vertices, std::vector<glm::vec2> _uvs, std::vector<glm::vec3> _normals);
+		//Mesh(std::vector<Vector3> _vertices, std::vector<Vector2> _uvs, std::vector<Vector3> _normals);
 		~Mesh();
 		
 		void Move(float X, float Y, float Z);
-		void Move(glm::vec3 vector);
+		void Move(Vector3 vector3);
 		void Resize(float W, float H, float D);
 		void Rotate(float, int X, int Y, int Z);
 		void SetTexture(const char* Texture);
@@ -52,16 +52,16 @@ namespace JanityEngine
 		Texture* texture;
 		ObjLoader* obj;
 		
-		std::vector<glm::vec3> vertices;
-		std::vector<glm::vec2> uvs;
-		std::vector<glm::vec3> normals;
+		std::vector<Vector3> vertices;
+		std::vector<Vector2> uvs;
+		std::vector<Vector3> normals;
 
-		glm::mat4 translation;
-		glm::mat4 rotation;
-		glm::mat4 scale;
-		glm::mat4 projection;
-		glm::mat4 view;
-		glm::mat4 model;
+		Matrix4 translation;
+		Matrix4 rotation;
+		Matrix4 scale;
+		Matrix4 projection;
+		Matrix4 view;
+		Matrix4 model;
 	};
 }
 #endif

@@ -118,9 +118,9 @@ void Quad::GenBuffer()
 }
 
 
-void Quad::Move(glm::vec3 Vector3)
+void Quad::Move(Vector3 vector3)
 {
-	Move(Vector3.x, Vector3.y, Vector3.z);
+	Move(vector3.x, vector3.y, vector3.z);
 }
 void Quad::Move(int X, int Y, float Z)
 {

@@ -3,8 +3,6 @@
 #include <FileReader.h>
 
 using namespace JanityEngine;
-using namespace glm;
-
 
 ObjLoader::ObjLoader()
 {
@@ -16,35 +14,38 @@ ObjLoader::~ObjLoader()
 
 }
 
-bool ObjLoader::LoadOBJ(const char* path, std::vector<vec3> & out_vertices,
-									      std::vector<vec2> & out_uvs,
-									      std::vector<vec3> & out_normals
+bool ObjLoader::LoadOBJ(const char* path, std::vector<Vector3> & out_vertices,
+									      std::vector<Vector2> & out_uvs,
+									      std::vector<Vector3> & out_normals
 									   )
 {
 	OpenFile(path);
-	ParseData();
-
+	//ParseData();
+	
 	for(unsigned int i=0; i<vertexIndices.size(); i++)
 	{
 		unsigned int vertexIndex = vertexIndices[i];
-		vec3 vertex = temp_vertices[vertexIndex-1];
+		Vector3 vertex = temp_vertices[vertexIndex-1];
 		out_vertices.push_back(vertex);
 	}
-
+	
 	for(unsigned int i=0; i<uvIndices.size(); i++)
 	{
 		unsigned int uvIndex = uvIndices[i];
-		vec2 uv = temp_uvs[uvIndex-1];
+		float x = temp_uvs[uvIndex-1].x;
+		float y = temp_uvs[uvIndex-1].y;
+		Vector2 uv = Vector2(x,y);//temp_uvs[uvIndex-1]);
 		out_uvs.push_back(uv);
 	}
-
+	
+	
 	for(unsigned int i=0; i<normalIndices.size(); i++)
 	{
 		unsigned int normalIndex = normalIndices[i];
-		vec3 normal = temp_normals[normalIndex-1];
+		Vector3 normal = temp_normals[normalIndex-1];
 		out_normals.push_back(normal);
 	}
-
+	
 	return 1;
 }
 
@@ -56,6 +57,7 @@ void ObjLoader::OpenFile(const char* path)
 	FR->ReadBytes(lenght, buff);
 	delete FR;
 }
+
 void ObjLoader::ParseData()
 {
 	char character;
@@ -117,27 +119,30 @@ void ObjLoader::ParseData()
 
 void ObjLoader::AddVertices(const size_t bufferIndex)
 {
-	vec3 vertex;
+	Vector3 vertex;
 	vertex.x = (float)atof(_tokens[bufferIndex+1].c_str());
 	vertex.y = (float)atof(_tokens[bufferIndex+2].c_str());
 	vertex.z = (float)atof(_tokens[bufferIndex+3].c_str());
 	temp_vertices.push_back(vertex);
 }
+
 void ObjLoader::AddUvs(const size_t bufferIndex)
 {
-	vec2 uv;
+	Vector2 uv;
 	uv.x = (float)atof(_tokens[bufferIndex+1].c_str());
 	uv.y = (float)atof(_tokens[bufferIndex+2].c_str());
 	temp_uvs.push_back(uv);
 }
+
 void ObjLoader::AddNormals(const size_t bufferIndex)
 {
-	vec3 normal;
+	Vector3 normal;
 	normal.x = (float)atof(_tokens[bufferIndex+1].c_str());
 	normal.y = (float)atof(_tokens[bufferIndex+2].c_str());
 	normal.z = (float)atof(_tokens[bufferIndex+3].c_str());
 	temp_normals.push_back(normal);
 }
+
 void ObjLoader::AddIndices(const size_t bufferIndex)
 {
 	unsigned int vertexIndex[3], uvIndex[3], normalIndex[3];

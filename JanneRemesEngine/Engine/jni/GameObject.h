@@ -4,16 +4,22 @@
 #include <Texture.h>
 #include <Sprite.h>
 #include <Object.h>
-#include <glm\glm.hpp>
 #include <Mesh.h>
+#include <JanityMath\JanityMath.h>
+
+using namespace JanityMath;
 
 namespace JanityEngine
 {
+	struct pos
+	{
+		float x,y,z;
+	};
     struct Transform
 	{
-		glm::vec3 position;
-		glm::vec3 rotation;
-		glm::vec3 scale;
+		Vector3 position;
+		Vector3 rotation;
+		Vector3 scale;
 	}; 
 
 	extern struct Transform;
@@ -27,33 +33,35 @@ namespace JanityEngine
 	class Sprite;
 	class GameObject : Object
 	{
-	public:
+	//public:
 		GameObject(); //empty gameObject
 		//Mesh
 		GameObject(Mesh* Mesh);
-		GameObject(Mesh* Mesh, glm::vec3 Position);
-		GameObject(Mesh* Mesh, glm::vec3 Position, float Angle, glm::vec3 Axis);
-		GameObject(Mesh* Mesh, glm::vec3 Position, float Angle, glm::vec3 Axis, glm::vec3 Scalar);
+		GameObject(Mesh* Mesh, Vector3 Position);
+		GameObject(Mesh* Mesh, Vector3 Position, float Angle, Vector3 Axis);
+		GameObject(Mesh* Mesh, Vector3 Position, float Angle, Vector3 Axis, Vector3 Scalar);
 		GameObject(Mesh* Mesh, Transform Transform);
 
 		//Sprite
 		GameObject(Texture* _texture);
-		GameObject(Texture* _texture, glm::vec2 _position);
-		GameObject(Texture* _texture, glm::vec2 _position, float _rotation);
-		GameObject(Texture* _texture, glm::vec2 _position, float _rotation, float Scalar);
-		GameObject(Texture* _texture, glm::vec2 _position, float _rotation, glm::vec2 Scale);
 
-		GameObject(Texture* _texture, glm::vec3 Position);
-		GameObject(Texture* _texture, glm::vec3 Position, float Rotation, float Scalar);
-		GameObject(Texture* _texture, glm::vec3 Position, float Rotation, glm::vec3 Scale);
+		GameObject(Texture* _texture, Vector2 _position);
+		GameObject(Texture* _texture, Vector2 _position, float _rotation);
+		GameObject(Texture* _texture, Vector2 _position, float _rotation, float Scalar);
+		GameObject(Texture* _texture, Vector2 _position, float _rotation, Vector2 Scale);
+
+		GameObject(Texture* _texture, Vector3 Position);
+		GameObject(Texture* _texture, Vector3 Position, float Rotation);
+		GameObject(Texture* _texture, Vector3 Position, float Rotation, float Scalar);
+		GameObject(Texture* _texture, Vector3 Position, float Rotation, Vector3 Scale);
 		GameObject(Texture* _texture, Transform Transform);
 
 		~GameObject();
 
 		GameObject(const GameObject& gameObject);
 		GameObject Instantiate(const GameObject &prefab);
-		GameObject Instantiate(const GameObject &prefab, glm::vec2 Position);
-		GameObject Instantiate(const GameObject &prefab, glm::vec3 Position);
+		GameObject Instantiate(const GameObject &prefab, Vector2 Position);
+		GameObject Instantiate(const GameObject &prefab, Vector3 Position);
 
 		void Destroy();
 		void PrintInfo();
@@ -74,21 +82,21 @@ namespace JanityEngine
 		bool HasComponent(Components);
 		void* GetComponent(Components);
 		void RemoveComponent(Components);
-		void Translate(glm::vec2 Vector2);
-		void Translate(glm::vec3 Vector3);
+		void Translate(const Vector2 vector2);
+		void Translate(const Vector3 vector3);
 		void Translate(float X, float Y = 0, float Z = 0);
-		void Scale(glm::vec3 Scalar);
-		void Scale(glm::vec2 Scalar);
+		void Scale(Vector3 Scalar);
+		void Scale(Vector2 Scalar);
 		void Scale(float X, float Y = 0, float Z = 0);
 
 		void Rotate(float Z);
-		void Rotate(glm::vec3 Axis);
-		void Rotate(float Angle, glm::vec3 Axis);
+		void Rotate(Vector3 Axis);
+		void Rotate(float Angle, Vector3 Axis);
 		void Rotate(float r, float X, float Y, float Z);
 		void UpdateTransform();
 	
 	private:
-
+	
 
 	};
 }

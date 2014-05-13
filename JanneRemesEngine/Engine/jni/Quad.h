@@ -5,7 +5,9 @@
 #include <Win32toAndroid.h>
 #include <Shader.h>
 #include <Texture.h>
-#include <glm\glm.hpp>
+#include <JanityMath\JanityMath.h>
+using namespace JanityMath;
+
 namespace JanityEngine
 {
 	class Quad
@@ -15,7 +17,7 @@ namespace JanityEngine
 		Quad(int X, int Y, float Z, int W, int H);
 		~Quad();
 
-		void Move(glm::vec3 Vector3);
+		void Move(Vector3 vector3);
 		void Move(int X, int Y, float Z);
 		void Resize(int W, int H);
 		void Rotate(float);

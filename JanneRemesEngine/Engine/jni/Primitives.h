@@ -2,11 +2,13 @@
 #ifndef Primitives_H
 #define Primitives_H
 
-#include <ObjLoader.h>
-#include <glm\glm.hpp>
-
 #include <vector>
 #include <string>
+
+#include <ObjLoader.h>
+#include <JanityMath\JanityMath.h>
+
+using namespace JanityMath;
 
 namespace JanityEngine
 {
@@ -16,9 +18,9 @@ namespace JanityEngine
 	public:
 		struct Model
 		{
-			std::vector<glm::vec3> vertices;
-			std::vector<glm::vec2> uvs;
-			std::vector<glm::vec3> normals;
+			std::vector<Vector3> vertices;
+			std::vector<Vector2> uvs;
+			std::vector<Vector3> normals;
 		}; 
 
 		Primitives();
@@ -38,9 +40,9 @@ namespace JanityEngine
 
 		ObjLoader* obj;
 
-		std::vector<glm::vec3> vertices;
-		std::vector<glm::vec2> uvs;
-		std::vector<glm::vec3> normals;
+		std::vector<Vector3> vertices;
+		std::vector<Vector2> uvs;
+		std::vector<Vector3> normals;
 	};
 }
 #endif

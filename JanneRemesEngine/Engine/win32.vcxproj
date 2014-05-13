@@ -12,7 +12,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FileReader.cpp" />
-    <ClCompile Include="jni\Primitives.cpp" />
     <ClCompile Include="jni\Camera.cpp" />
     <ClCompile Include="jni\ContentManager.cpp" />
     <ClCompile Include="jni\Debug.cpp" />
@@ -25,10 +24,6 @@
     <ClCompile Include="jni\Object.cpp" />
     <ClCompile Include="jni\ObjLoader.cpp" />
     <ClCompile Include="jni\Quad.cpp" />
-    <ClCompile Include="jni\Scene01.cpp" />
-    <ClCompile Include="jni\Scene02.cpp" />
-    <ClCompile Include="jni\Scene03.cpp" />
-    <ClCompile Include="jni\Scene04.cpp" />
     <ClCompile Include="jni\Shader.cpp" />
     <ClCompile Include="jni\Sound.cpp" />
     <ClCompile Include="jni\SoundManager.cpp" />
@@ -42,7 +37,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FileReader.h" />
-    <ClInclude Include="jni\Primitives.h" />
     <ClInclude Include="jni\Camera.h" />
     <ClInclude Include="jni\ContentManager.h" />
     <ClInclude Include="jni\Debug.h" />
@@ -54,10 +48,6 @@
     <ClInclude Include="jni\Object.h" />
     <ClInclude Include="jni\ObjLoader.h" />
     <ClInclude Include="jni\Quad.h" />
-    <ClInclude Include="jni\Scene01.h" />
-    <ClInclude Include="jni\Scene02.h" />
-    <ClInclude Include="jni\Scene03.h" />
-    <ClInclude Include="jni\Scene04.h" />
     <ClInclude Include="jni\Shader.h" />
     <ClInclude Include="jni\Sound.h" />
     <ClInclude Include="jni\SoundManager.h" />
@@ -83,6 +73,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
+    <UseOfAtl>Static</UseOfAtl>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>

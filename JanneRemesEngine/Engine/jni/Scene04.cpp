@@ -1,5 +1,8 @@
 #include <Scene04.h>
 
+#include <JanityMath\JanityMath.h>
+
+using namespace JanityMath;
 using namespace JanityEngine;
 
 Scene04::Scene04(float w, float h)
@@ -30,37 +33,38 @@ void Scene04::Update(float dt)
 	probe->Move(sin(sine)*2.5f - cos(sine)*2.5f, cos(sine)*4.5f - sin(sine)*2.5f, sin(sine)*4.5f);
 
 	//Camera::Move(glm::vec3(0+sin(sine)*60.0f,30,0+cos(sine)*60.0f));
+	Camera* mainCamera = Camera::MainCamera();
 
-	glm::vec3 temp = Camera::_position - Camera::_lookAt;
+	Vector3 temp = mainCamera->_position - mainCamera->_lookAt;
 	float distance = std::sqrt((temp.x)*(temp.x)+(temp.z)*(temp.z));
 
 	if(GetAsyncKeyState(VK_UP) && !keyPressed)
 	{	rKey+=0.1f;
-		Camera::Move(glm::vec3(0+sin(rKey)*distance,Camera::_position.y,Camera::_position.z-1));
+		mainCamera->Move(Vector3(0+sin(rKey)*distance,mainCamera->_position.y,mainCamera->_position.z-1));
 		//Camera::Move(glm::vec3(Camera::_position.x,Camera::_position.y,Camera::_position.z-1));
 	}
 	if(GetAsyncKeyState(VK_DOWN) && !keyPressed)
 	{	rKey+=0.1f;
-		Camera::Move(glm::vec3(0+sin(rKey)*distance,Camera::_position.y,0+cos(rKey)*distance));
+		mainCamera->Move(Vector3(0+sin(rKey)*distance,mainCamera->_position.y,0+cos(rKey)*distance));
 		//Camera::Move(glm::vec3(Camera::_position.x,Camera::_position.y,Camera::_position.z+1));
 	}
 	if(GetAsyncKeyState(VK_LEFT) && !keyPressed)
 	{	rKey+=0.1f;
-		Camera::Move(glm::vec3(0+sin(rKey)*distance,Camera::_position.y,0+cos(rKey)*distance));
+		mainCamera->Move(Vector3(0+sin(rKey)*distance,mainCamera->_position.y,0+cos(rKey)*distance));
 		//Camera::Move(glm::vec3(Camera::_position.x-1,Camera::_position.y,Camera::_position.z));
 	}
 	if(GetAsyncKeyState(VK_RIGHT) && !keyPressed)
 	{	rKey-=0.1f;
-		Camera::Move(glm::vec3(0+sin(rKey)*distance,Camera::_position.y,0+cos(rKey)*distance));
+		mainCamera->Move(Vector3(0+sin(rKey)*distance,mainCamera->_position.y,0+cos(rKey)*distance));
 		//Camera::Move(glm::vec3(Camera::_position.x+1,Camera::_position.y,Camera::_position.z));
 	}
 	if(GetAsyncKeyState(VK_CONTROL) && !keyPressed)
 	{
-		Camera::Move(glm::vec3(Camera::_position.x,Camera::_position.y-1,Camera::_position.z));
+		mainCamera->Move(Vector3(mainCamera->_position.x,mainCamera->_position.y-1,mainCamera->_position.z));
 	}
 	if(GetAsyncKeyState(VK_MENU) && !keyPressed)
 	{
-		Camera::Move(glm::vec3(Camera::_position.x,Camera::_position.y+1,Camera::_position.z));
+		mainCamera->Move(Vector3(mainCamera->_position.x,mainCamera->_position.y+1,mainCamera->_position.z));
 	}
 
 	Debug::WriteLog("Camera x: %f\n", temp.x);

@@ -2,8 +2,10 @@
 #include <cmath>
 #include <Debug.h>
 
+#include <JanityMath\JanityMath.h>
+
 using namespace JanityEngine;
-using namespace glm;
+using namespace JanityMath;
 
 Scene02::Scene02(float w, float h)
 {
@@ -46,7 +48,8 @@ void Scene02::Update(float dt)
 	luna5->Rotate(sine*40, 1,0,1);
 	luna5->Move(0 + sin(-sine+4.14f)*10.0f, 0 + cos(-sine+4.14f)*8.0f, 0 + sin(sine-4.14f)*13.0f);
 	
-	Camera::Move(glm::vec3(0+sin(sine)*60.0f,30,0+cos(sine)*60.0f));
+	Camera* mainCamera = Camera::MainCamera();
+	mainCamera->Move(Vector3(0+sin(sine)*60.0f,30,0+cos(sine)*60.0f));
 
 	//if(GetAsyncKeyState(VK_UP) && !keyPressed)
 	//	gaia->Move(gaia->x,gaia->y,gaia->z-0.3f);

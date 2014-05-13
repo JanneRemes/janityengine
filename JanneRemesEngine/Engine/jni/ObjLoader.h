@@ -9,7 +9,8 @@
 //#include <Win32toAndroid.h>
 #include <Debug.h>
 
-#include <glm\glm.hpp>
+#include <JanityMath\JanityMath.h>
+using namespace JanityMath;
 
 namespace JanityEngine {
 	class ObjLoader
@@ -18,9 +19,9 @@ namespace JanityEngine {
 		ObjLoader();
 		~ObjLoader();
 
-		bool LoadOBJ(const char* path, std::vector<glm::vec3> & out_vertices,
-									   std::vector<glm::vec2> & out_uvs,
-									   std::vector<glm::vec3> & out_normals
+		bool LoadOBJ(const char* path, std::vector<Vector3> & out_vertices,
+									   std::vector<Vector2> & out_uvs,
+									   std::vector<Vector3> & out_normals
 									   );
 
 	private:
@@ -34,9 +35,9 @@ namespace JanityEngine {
 		void AddIndices(const size_t bufferIndex);
 		
 		std::vector<unsigned int> vertexIndices, uvIndices, normalIndices;
-		std::vector<glm::vec3> temp_vertices;
-		std::vector<glm::vec2> temp_uvs;
-		std::vector<glm::vec3> temp_normals;
+		std::vector<Vector3> temp_vertices;
+		std::vector<Vector2> temp_uvs;
+		std::vector<Vector3> temp_normals;
 
 		long lenght;
 		char *buff;

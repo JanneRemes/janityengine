@@ -2,7 +2,6 @@
 #define JANITYMATH_VECTOR2_H
 
 #include <iostream>
-//#include <MathUtils.h>
 namespace JanityMath
 {
 	class Matrix3;
@@ -40,29 +39,27 @@ namespace JanityMath
 	//	Methods End
 
 	//	Operators Start
-		Vector2& operator =(const Vector2& rhs);
+		Vector2 operator +(const Vector2& vector) const;
+		Vector2 operator -(const Vector2& vector) const;
+		Vector2& operator =(const Vector2& vector);
 
-		Vector2& operator +(const Vector2& rhs) const;
-		Vector2& operator +=(const Vector2& rhs) const;
+		const Vector2& operator +=(const Vector2& vector);
+		const Vector2& operator -=(const Vector2& vector);
 
-		Vector2& operator -(const Vector2& rhs) const;
-		Vector2& operator -=(const Vector2& rhs) const;
-
-		Vector2& operator /(const float divisor) const;
-		const Vector2& operator /=(const float divisor);
+		bool operator ==(const Vector2& vector) const;
+		bool operator !=(const Vector2& vector) const;
 
 		Vector2 operator -() const;
-
-		bool operator== (const Vector2& rhs) const;
-		bool operator!= (const Vector2& rhs) const;
+		Vector2 operator /(const float scalar) const;
+		const Vector2& operator /=(const float scalar);
 
 		float& operator [](const unsigned int index);
 		const float& operator [](const unsigned int index) const;
 
 		friend Vector2 operator *(const Vector2& vector, const float scalar);
 		friend Vector2 operator *(const float scalar, const Vector2& vector);
-		friend const Vector2& operator *=(Vector2& vector, const float scalar);
 
+		friend const Vector2& operator *=(Vector2& vector, const float scalar);
 		friend std::ostream& operator <<(std::ostream& output, const Vector2& vector);
 	//	Operators End
 	};

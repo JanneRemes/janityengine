@@ -2,7 +2,6 @@
 #ifndef SCENE04_H
 #define SCENE04_H
 
-
 #include <Shader.h>
 #include <Mesh.h>
 #include <Camera.h>

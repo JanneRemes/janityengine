@@ -15,14 +15,14 @@ GameObject::GameObject(Mesh* Mesh)
 	ResetTransform();
 	mesh = Mesh;
 }
-GameObject::GameObject(Mesh* Mesh, glm::vec3 Position)
+GameObject::GameObject(Mesh* Mesh, Vector3 Position)
 	: sprite(NULL)
 {
 	mesh = Mesh;
 	ResetTransform();
 	Translate(Position);
 }
-GameObject::GameObject(Mesh* Mesh, glm::vec3 Position, float Angle, glm::vec3 Axis)
+GameObject::GameObject(Mesh* Mesh, Vector3 Position, float Angle, Vector3 Axis)
 	: sprite(NULL)
 {
 	mesh = Mesh;	
@@ -30,7 +30,7 @@ GameObject::GameObject(Mesh* Mesh, glm::vec3 Position, float Angle, glm::vec3 Ax
 	Translate(Position);
 	Rotate(Angle, Axis);
 }
-GameObject::GameObject(Mesh* Mesh, glm::vec3 Position, float Angle, glm::vec3 Axis, glm::vec3 Scale)
+GameObject::GameObject(Mesh* Mesh, Vector3 Position, float Angle, Vector3 Axis, Vector3 Scale)
 	: sprite(NULL)
 {
 	mesh = Mesh;	
@@ -56,7 +56,7 @@ GameObject::GameObject(Texture* Texture)
 }
 
 //vec2
-GameObject::GameObject(Texture* Texture, glm::vec2 Position) 
+GameObject::GameObject(Texture* Texture, Vector2 Position) 
 	: mesh(NULL)
 {
 	sprite = new Sprite(Texture);
@@ -64,7 +64,7 @@ GameObject::GameObject(Texture* Texture, glm::vec2 Position)
 	Translate(Position.x, Position.y);
 }
 
-GameObject::GameObject(Texture* Texture, glm::vec2 Position, float Rotation)
+GameObject::GameObject(Texture* Texture, Vector2 Position, float Rotation)
 	: mesh(NULL)
 {
 	sprite = new Sprite(Texture);
@@ -72,16 +72,16 @@ GameObject::GameObject(Texture* Texture, glm::vec2 Position, float Rotation)
 	Translate(Position.x, Position.y);
 	Rotate(Rotation);
 }
-GameObject::GameObject(Texture* Texture, glm::vec2 Position, float Rotation, float Scalar) 
+GameObject::GameObject(Texture* Texture, Vector2 Position, float Rotation, float Scalar) 
 	: mesh(NULL)
 {
 	sprite = new Sprite(Texture);
 	ResetTransform();
 	Translate(Position);
 	Rotate(Rotation);
-	Scale(Scalar);
+	Scale(Scalar);//
 }
-GameObject::GameObject(Texture* Texture, glm::vec2 Position, float Rotation, glm::vec2 Scalar)
+GameObject::GameObject(Texture* Texture, Vector2 Position, float Rotation, Vector2 Scalar)
 	: mesh(NULL)
 {
 	sprite = new Sprite(Texture);
@@ -93,14 +93,24 @@ GameObject::GameObject(Texture* Texture, glm::vec2 Position, float Rotation, glm
 
 
 //vec3
-GameObject::GameObject(Texture* Texture, glm::vec3 Position)
+GameObject::GameObject(Texture* Texture, Vector3 Position)
 	: mesh(NULL)
 {
 	sprite = new Sprite(Texture);
 	ResetTransform();
 	transform.position = Position;
 }
-GameObject::GameObject(Texture* Texture, glm::vec3 Position, float Rotation, float Scalar)
+GameObject::GameObject(Texture* _texture, Vector3 Position, float Rotation)
+	: mesh(NULL)
+{
+	sprite = new Sprite(_texture);
+	ResetTransform();
+	Translate(Position);
+	Rotate(Rotation);
+
+}
+
+GameObject::GameObject(Texture* Texture, Vector3 Position, float Rotation, float Scalar)
 	: mesh(NULL)
 {
 	sprite = new Sprite(Texture);
@@ -109,7 +119,7 @@ GameObject::GameObject(Texture* Texture, glm::vec3 Position, float Rotation, flo
 	Rotate(Rotation);
 	Scale(Scalar);
 }
-GameObject::GameObject(Texture* Texture, glm::vec3 Position, float Rotation, glm::vec3 Scalar)
+GameObject::GameObject(Texture* Texture, Vector3 Position, float Rotation, Vector3 Scalar)
 	: mesh(NULL)
 {
 	sprite = new Sprite(Texture);
@@ -141,14 +151,14 @@ GameObject GameObject::Instantiate(const GameObject& prefab)
 	return GameObject(prefab);
 }
 
-GameObject GameObject::Instantiate(const GameObject& Prefab, glm::vec2 Position)
+GameObject GameObject::Instantiate(const GameObject& Prefab, Vector2 Position)
 {
 	GameObject go = GameObject(Prefab);
 	go.transform.position.x = Position.x;
 	go.transform.position.y = Position.y;
 	return go;
 }
-GameObject GameObject::Instantiate(const GameObject& Prefab, glm::vec3 Position)
+GameObject GameObject::Instantiate(const GameObject& Prefab, Vector3 Position)
 {
 	GameObject go = GameObject(Prefab);
 	go.transform.position = Position;
@@ -169,7 +179,7 @@ void GameObject::ResetTransform()
 	transform.position.x = 0;
 	transform.position.y = 0;
 	transform.position.z = 0;
-	transform.rotation.null;
+	transform.rotation.zero();
 	transform.scale.x = 1;
 	transform.scale.y = 1;
 	transform.scale.z = 1;
@@ -236,8 +246,7 @@ void GameObject::AddComponent(Components component)
 			break;
 		case Components::MaterialComponent:
 			break;
-		case Components::MeshComponent:
-			
+		case Components::MeshComponent:		
 			break;
 		case Components::SpriteComponent:
 			if (sprite == nullptr)
@@ -295,27 +304,27 @@ void GameObject::RemoveComponent(Components Component)
 	}
 }
 
-void GameObject::Translate(glm::vec2 Vector2)
+void GameObject::Translate(const Vector2 vector2)
 {
-	Translate(Vector2.x, Vector2.y, 0);
+	Translate(vector2.x, vector2.y, 0);
 }
-void GameObject::Translate(glm::vec3 Vector3)
+void GameObject::Translate(const Vector3 vector3)
 {
-	Translate(Vector3.x, Vector3.y, Vector3.z);
+	Translate(vector3.x, vector3.y, vector3.z);
 }
 void GameObject::Translate(float X, float Y, float Z)
 {
 	transform.position.x += X;
 	transform.position.y += Y;
-	transform.position.z += Z;
+	transform.position.z += Z;//
 	UpdateTransform();
 }
 
-void GameObject::Scale(glm::vec2 Scalar)
+void GameObject::Scale(Vector2 Scalar)
 {
 	Scale(Scalar.x, Scalar.y, 0);
 }
-void GameObject::Scale(glm::vec3 Scalar)
+void GameObject::Scale(Vector3 Scalar)
 {
 	Scale(Scalar.x, Scalar.y, Scalar.z);
 }
@@ -343,13 +352,13 @@ void GameObject::Rotate(float Z)
 		sprite->Rotate(Z);
 	}
 }
-void GameObject::Rotate(glm::vec3 Axis)
+void GameObject::Rotate(Vector3 Axis)
 {
 	Rotate(Axis.x,1,0,0);
 	Rotate(Axis.y,0,1,0);
 	Rotate(Axis.z,0,0,1);
 }
-void GameObject::Rotate(float Angle, glm::vec3 Axis)
+void GameObject::Rotate(float Angle, Vector3 Axis)
 {
 	Rotate(Angle, Axis.x, Axis.y, Axis.z);
 }
@@ -362,7 +371,7 @@ void GameObject::Rotate(float R, float X, float Y, float Z)
 }
 void GameObject::UpdateTransform()
 {		
-	glm::vec3 moveVector(transform.position.x, transform.position.y, transform.position.z);
+	Vector3 moveVector(transform.position.x, transform.position.y, transform.position.z);
 	if (sprite != NULL)
 	{
 		sprite->Move(moveVector);

@@ -63,12 +63,6 @@
     <ClCompile Include="jni\Quad.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="jni\Demo.cpp">
-      <Filter>Demo</Filter>
-    </ClCompile>
-    <ClCompile Include="jni\Scene01.cpp">
-      <Filter>Demo</Filter>
-    </ClCompile>
     <ClCompile Include="jni\Mesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -78,19 +72,10 @@
     <ClCompile Include="jni\Sprite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="jni\Scene02.cpp">
-      <Filter>Demo</Filter>
-    </ClCompile>
     <ClCompile Include="jni\Object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="jni\SpriteComponent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="jni\Scene03.cpp">
-      <Filter>Demo</Filter>
-    </ClCompile>
-    <ClCompile Include="jni\Camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="jni\Sound.cpp">
@@ -99,10 +84,10 @@
     <ClCompile Include="jni\SoundManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="jni\Primitives.cpp">
-      <Filter>Demo</Filter>
+    <ClCompile Include="jni\Camera.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="jni\Scene04.cpp">
+    <ClCompile Include="jni\Demo.cpp">
       <Filter>Demo</Filter>
     </ClCompile>
   </ItemGroup>
@@ -143,12 +128,6 @@
     <ClInclude Include="jni\Quad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="jni\Demo.h">
-      <Filter>Demo</Filter>
-    </ClInclude>
-    <ClInclude Include="jni\Scene01.h">
-      <Filter>Demo</Filter>
-    </ClInclude>
     <ClInclude Include="jni\Mesh.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -158,19 +137,10 @@
     <ClInclude Include="jni\Sprite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="jni\Scene02.h">
-      <Filter>Demo</Filter>
-    </ClInclude>
     <ClInclude Include="jni\Object.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="jni\SpriteComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="jni\Scene03.h">
-      <Filter>Demo</Filter>
-    </ClInclude>
-    <ClInclude Include="jni\Camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="jni\Sound.h">
@@ -179,10 +149,10 @@
     <ClInclude Include="jni\SoundManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="jni\Primitives.h">
-      <Filter>Demo</Filter>
+    <ClInclude Include="jni\Camera.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="jni\Scene04.h">
+    <ClInclude Include="jni\Demo.h">
       <Filter>Demo</Filter>
     </ClInclude>
   </ItemGroup>

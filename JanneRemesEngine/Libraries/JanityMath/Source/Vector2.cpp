@@ -16,7 +16,11 @@ Vector2::Vector2() : x(0), y(0){}
 Vector2::Vector2(const float X, const float Y) : x(X), y(Y){}
 Vector2::Vector2(const float value) : x(value), y(value){}
 Vector2::~Vector2(){}
-
+Vector2::Vector2(const Vector2& other)
+{
+	x = other.x;
+	y = other.y;
+}
 float Vector2::magnitude() const
 {
 	return sqrt(x * x + y * y);
@@ -79,52 +83,73 @@ Vector2 Vector2::zero()
 }
 
 //Operators
-Vector2& Vector2::operator =(const Vector2& rhs) 
+Vector2 Vector2::operator +(const Vector2& vector) const
 {
-	if(this!= &rhs)
+	const float _x = x + vector.x;
+	const float _y = y + vector.y;
+
+	return Vector2(_x, _y);
+}
+
+Vector2 Vector2::operator -(const Vector2& vector) const
+{
+	const float _x = x - vector.x;
+	const float _y = y - vector.y;
+
+	return Vector2(_x, _y);
+}
+
+Vector2& Vector2::operator =(const Vector2& vector)
+{
+	if(this != &vector)
 	{
-		x = rhs.x;
-		y = rhs.y;
+		x = vector.x;
+		y = vector.y;
 	}
+
 	return *this;
 }
 
-Vector2& Vector2::operator +(const Vector2& rhs) const
+const Vector2& Vector2::operator +=(const Vector2& vector)
 {
-	const float _x = x + rhs.x;
-	const float _y = y + rhs.y;
+	*this = *this + vector;
+	return *this;
+}
+
+const Vector2& Vector2::operator -=(const Vector2& vector)
+{
+	*this = *this - vector;
+	return *this;
+}
+
+bool Vector2::operator ==(const Vector2& vector) const
+{
+	return equals(x, vector.x) && equals(y, vector.y);
+}
+
+bool Vector2::operator !=(const Vector2& vector) const
+{
+	return !(*this == vector);
+}
+
+Vector2 Vector2::operator -() const
+{
+	return Vector2(-x, -y);
+}
+
+Vector2 Vector2::operator /(const float scalar) const
+{
+	assert(!equals(scalar, 0.0f));
+
+	const float _x = x / scalar;
+	const float _y = y / scalar;
+
 	return Vector2(_x, _y);
 }
 
-Vector2& Vector2::operator +=(const Vector2& rhs) const
+const Vector2& Vector2::operator /=(const float scalar)
 {
-	return operator+(rhs);
-}
-
-Vector2& Vector2::operator -(const Vector2& rhs) const
-{
-	const float _x = x - rhs.x;
-	const float _y = y - rhs.y;
-	return Vector2(_x, _y);
-}
-
-Vector2& Vector2::operator -=(const Vector2& rhs) const
-{
-	return operator-(rhs);
-}
-
-Vector2& Vector2::operator /(const float divisor) const
-{
-	assert(!equals(divisor, 0.0f));
-
-	const float _x = x / divisor;
-	const float _y = y / divisor;
-
-	return Vector2(_x, _y);
-}
-const Vector2& Vector2::operator /=(const float divisor)
-{
-	*this = *this / divisor;
+	*this = *this / scalar;
 	return *this;
 }
 
@@ -140,26 +165,30 @@ const float& Vector2::operator [](const unsigned int index) const
 	return (&x)[index];
 }
 
+// Friends
+
 namespace JanityMath
 {
-	Vector2 operator *(const Vector2& rhs, const float scalar)
+	Vector2 operator *(const Vector2& vector, const float scalar)
 	{
-		const float _x = scalar * rhs.x;
-		const float _y = scalar * rhs.y;
+		const float _x = scalar * vector.x;
+		const float _y = scalar * vector.y;
+		
 
 		return Vector2(_x, _y);
 	}
 
-	Vector2 operator *(const float scalar, const Vector2& rhs)
+	Vector2 operator *(const float scalar, const Vector2& vector)
 	{
-		return rhs * scalar;
+		return vector * scalar;
 	}
 
-	const Vector2& operator *=(Vector2& rhs, const float scalar)
+	const Vector2& operator *=(Vector2& vector, const float scalar)
 	{
-		return rhs * scalar;
+		Vector2 result;
+		result = vector * scalar;
+		return result;
 	}
-
 	std::ostream& operator <<(std::ostream& output, const Vector2& vector)
 	{
 		output << "[X: " << vector.x << ", Y: " << vector.y << "]";

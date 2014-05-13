@@ -2,7 +2,6 @@
 #ifndef SCENE02_H
 #define SCENE02_H
 
-
 #include <Shader.h>
 #include <Mesh.h>
 #include <Quad.h>

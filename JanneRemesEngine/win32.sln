@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JanityMath", "Libraries\JanityMath\JanityMath.vcxproj", "{68689945-6B4F-42B5-AB14-746F644A755B}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "win32", "Engine\win32.vcxproj", "{3FC89FBB-49CE-4CAC-A9B9-E79F5A02E193}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JanityMath", "Libraries\JanityMath\JanityMath.vcxproj", "{68689945-6B4F-42B5-AB14-746F644A755B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,14 +11,13 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3FC89FBB-49CE-4CAC-A9B9-E79F5A02E193}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3FC89FBB-49CE-4CAC-A9B9-E79F5A02E193}.Debug|Win32.Build.0 = Debug|Win32
+		{3FC89FBB-49CE-4CAC-A9B9-E79F5A02E193}.Release|Win32.ActiveCfg = Release|Win32
 		{68689945-6B4F-42B5-AB14-746F644A755B}.Debug|Win32.ActiveCfg = Debug|Win32
 		{68689945-6B4F-42B5-AB14-746F644A755B}.Debug|Win32.Build.0 = Debug|Win32
 		{68689945-6B4F-42B5-AB14-746F644A755B}.Release|Win32.ActiveCfg = Release|Win32
 		{68689945-6B4F-42B5-AB14-746F644A755B}.Release|Win32.Build.0 = Release|Win32
-		{3FC89FBB-49CE-4CAC-A9B9-E79F5A02E193}.Debug|Win32.ActiveCfg = Debug|Win32
-		{3FC89FBB-49CE-4CAC-A9B9-E79F5A02E193}.Debug|Win32.Build.0 = Debug|Win32
-		{3FC89FBB-49CE-4CAC-A9B9-E79F5A02E193}.Release|Win32.ActiveCfg = Release|Win32
-		{3FC89FBB-49CE-4CAC-A9B9-E79F5A02E193}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

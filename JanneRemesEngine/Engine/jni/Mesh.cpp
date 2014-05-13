@@ -19,7 +19,7 @@ Mesh::Mesh(int X, int Y, int Z, float scale, const char* objPath)
 	Resize(scale, scale, scale);
 	Rotate(0, 1,1,1);
 	
-	model = glm::mat4(1.0f);
+	model.identity();//glm::mat4(1.0f);
 }
 Mesh::Mesh(int Size, float* _data)
 {
@@ -68,9 +68,9 @@ Mesh::Mesh(int Size, float* _data)
 	Resize(0.1f,0.1f,0.1f);
 	Rotate(0, 1,1,1);
 
-	model = glm::mat4(1.0f);
+	model.identity();//glm::mat4(1.0f);
 }
-Mesh::Mesh(std::vector<glm::vec3> _vertices, std::vector<glm::vec2> _uvs, std::vector<glm::vec3> _normals)
+/*Mesh::Mesh(std::vector<Vector3> _vertices, std::vector<Vector2> _uvs, std::vector<Vector3> _normals)
 {
 	x = 0;
 	y = 0;
@@ -87,8 +87,8 @@ Mesh::Mesh(std::vector<glm::vec3> _vertices, std::vector<glm::vec2> _uvs, std::v
 	Resize(0.1f, 0.1f, 0.1f);
 	Rotate(0,1,1,1);
 
-	model = glm::mat4(1.0f);
-}
+	model.identity(); // glm::mat4(1.0f);
+}*/
 
 Mesh::~Mesh()
 {
@@ -100,8 +100,8 @@ Mesh::~Mesh()
 void Mesh::LoadObj(const char* _objPath)
 {
 	obj = new ObjLoader();
-	bool a = obj->LoadOBJ(_objPath, vertices, uvs, normals);
-	assert(a==1);
+//	bool a = obj->LoadOBJ(_objPath, vertices, uvs, normals);
+//	assert(a==1);
 	delete obj;
 }
 void Mesh::HandleData()
@@ -152,16 +152,16 @@ void Mesh::GenBuffer()
 void Mesh::Move(float X, float Y, float Z)
 {
 	x = X; y = Y; z = Z;
-	translation = glm::translate(glm::vec3(x, y, z));
+	translation.createTranslation(Vector3(x, y, z));
 }
 
-void Mesh::Move(glm::vec3 vector)
+void Mesh::Move(Vector3 vector)
 {
 	Move(vector.x, vector.y, vector.z);
 }
 void Mesh::Resize(float W, float H, float D)
 {
-	scale = glm::scale(W, H, D);
+	scale.createScaling(W,H,D);
 }
 
 void Mesh::Rotate(float r, int X, int Y, int Z)
@@ -170,7 +170,7 @@ void Mesh::Rotate(float r, int X, int Y, int Z)
 	rX = X;
 	rY = Y;
 	rZ = Z;
-	rotation = glm::rotate(r, glm::vec3(rX,rY,rZ));
+	rotation.createRotationAxis(Vector3(X,Y,Z), r);
 }
 
 void Mesh::SetTexture(const char* Texture)
@@ -199,12 +199,12 @@ void Mesh::SetProjection(int desiredWidth, int desiredHeight)
 	float dW = desiredWidth;
 	float dH = desiredHeight;
 
-	projection = Camera::GetProjMat(45.0f, dW/dH, 0.1f, 1000.0f);
+	projection = Camera::MainCamera()->GetProjMat(45.0f, dW/dH, 0.1f, 1000.0f);
 }
 
 void Mesh::Draw()
 {
-	view = Camera::GetViewMat();
+	view = Camera::MainCamera()->GetViewMat();
 	model = translation * rotation * scale;
 
 	glUseProgram(program);
