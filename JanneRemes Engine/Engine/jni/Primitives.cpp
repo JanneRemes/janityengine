@@ -16,7 +16,7 @@ Primitives::Primitives()
 	Triangle.normals = normals;
 	Clear();
 	
-	Load("Primitives/Plane.obj");
+	Load("Primitives/plane.obj");
 	Plane.vertices = vertices;
 	Plane.uvs = uvs;
 	Plane.normals = normals;

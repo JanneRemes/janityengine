@@ -22,7 +22,7 @@ Scene02::~Scene02(void)
 	delete luna3;
 	delete luna4;
 	delete luna5;
-	delete bg;
+
 }
 
 // PUBLIC
@@ -78,7 +78,7 @@ void Scene02::Update(float dt)
 
 void Scene02::Draw()
 {	
-	bg->Draw();
+
 
 	gaia->Draw();
 	luna1->Draw();
@@ -93,7 +93,7 @@ void Scene02::Draw()
 
 void Scene02::SetProjection()
 {
-	bg->SetProjection(desiredWidth, desiredHeight);
+	
 
 	gaia->SetProjection(desiredWidth, desiredHeight);
 	gaia_cloud	->SetProjection(desiredWidth, desiredHeight);
@@ -153,10 +153,7 @@ void Scene02::Initialize()
 	luna5			->SetTexture("Scene02/planet.tga");
 
 
-	bg = new Mesh(0,-8,0, 2.0f, "Scene02/testi.obj");
-	bg->Rotate(90,1,0,0);
-	bg->SetProgram(Program);
-	bg->SetTexture("Scene02/space.tga");
+
 
 	sine = 0;
 	keyPressed = false;

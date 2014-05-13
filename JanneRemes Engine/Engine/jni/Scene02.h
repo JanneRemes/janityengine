@@ -38,7 +38,7 @@ namespace KaMo
 		Mesh* luna3;
 		Mesh* luna4;
 		Mesh* luna5;
-		Mesh* bg;
+	
 
 		float sine;
 		bool keyPressed;
