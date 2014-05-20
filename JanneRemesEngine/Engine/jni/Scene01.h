@@ -4,6 +4,9 @@
 
 #include <Quad.h>
 #include <Shader.h>
+#include <JanityMath\JanityMath.h>
+
+using namespace JanityMath;
 
 namespace JanityEngine
 {
@@ -23,16 +26,24 @@ namespace JanityEngine
 		void Initialize();
 
 		Quad* gaia;
-		Quad* luna1;
-		Quad* luna2;
-		Quad* luna3;
-		Quad* luna4;
-		Quad* luna5;
-		Quad* bg;
+		
+		int amountOfCollisions;
+		const int MAX_COLLISIONS;
+	
+		float collisionVelocityPenalty;
+		float collisionHeight;
+		float radius;
+		Vector2 dir;
+		float speed;
+		const float GRAVITY;
+		Vector2 velocity;
+		Vector3 position;
+		bool CollisionCheck(float newY);
+		void Move(float dt);
 
-		float sine;
-		float desiredWidth;
-		float desiredHeight;
+
+		GLsizei desiredWidth;
+		GLsizei desiredHeight;
 
 		Shader* sceneShader;
 	};
