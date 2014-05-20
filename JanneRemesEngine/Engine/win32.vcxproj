@@ -20,6 +20,7 @@
     <ClCompile Include="jni\Engine.cpp" />
     <ClCompile Include="jni\Game.cpp" />
     <ClCompile Include="jni\GameObject.cpp" />
+    <ClCompile Include="jni\MathDemo.cpp" />
     <ClCompile Include="jni\Mesh.cpp" />
     <ClCompile Include="jni\Object.cpp" />
     <ClCompile Include="jni\ObjLoader.cpp" />
@@ -30,6 +31,7 @@
     <ClCompile Include="jni\Scene03.cpp" />
     <ClCompile Include="jni\Scene04.cpp" />
     <ClCompile Include="jni\Shader.cpp" />
+    <ClCompile Include="jni\ShaderDemo.cpp" />
     <ClCompile Include="jni\Sound.cpp" />
     <ClCompile Include="jni\SoundManager.cpp" />
     <ClCompile Include="jni\Sprite.cpp" />
@@ -49,6 +51,7 @@
     <ClInclude Include="jni\DeviceManager.h" />
     <ClInclude Include="jni\Game.h" />
     <ClInclude Include="jni\GameObject.h" />
+    <ClInclude Include="jni\MathDemo.h" />
     <ClInclude Include="jni\Mesh.h" />
     <ClInclude Include="jni\Object.h" />
     <ClInclude Include="jni\ObjLoader.h" />
@@ -59,6 +62,7 @@
     <ClInclude Include="jni\Scene03.h" />
     <ClInclude Include="jni\Scene04.h" />
     <ClInclude Include="jni\Shader.h" />
+    <ClInclude Include="jni\ShaderDemo.h" />
     <ClInclude Include="jni\Sound.h" />
     <ClInclude Include="jni\SoundManager.h" />
     <ClInclude Include="jni\Sprite.h" />

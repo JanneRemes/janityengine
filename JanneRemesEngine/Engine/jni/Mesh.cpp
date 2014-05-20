@@ -166,10 +166,15 @@ void Mesh::Resize(float W, float H, float D)
 
 void Mesh::Rotate(float r, int X, int Y, int Z)
 {
-	int rX, rY, rZ;
+	float rX, rY, rZ;
 	rX = X;
 	rY = Y;
 	rZ = Z;
+	rotation.createRotationAxis(Vector3(rX,rY,rZ).normal(), r);
+}
+
+void Mesh::Rotate(float r, float X, float Y, float Z)
+{
 	rotation.createRotationAxis(Vector3(X,Y,Z).normal(), r);
 }
 

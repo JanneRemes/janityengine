@@ -39,6 +39,13 @@ namespace JanityMath
 		Vector3 transform(const Matrix4& transform) const;
 		Vector3 transform(const Quaternion& quaternion) const;
 		static Vector3 zero();
+		static Vector3 up();
+		static Vector3 down();
+		static Vector3 left();
+		static Vector3 right();
+		static Vector3 forward();
+		static Vector3 backward();
+
 	//	Methods End
 
 	//	Operators Start

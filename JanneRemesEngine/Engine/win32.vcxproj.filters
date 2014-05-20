@@ -105,6 +105,12 @@
     <ClCompile Include="jni\Primitives.cpp">
       <Filter>Demo</Filter>
     </ClCompile>
+    <ClCompile Include="jni\MathDemo.cpp">
+      <Filter>Demo</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\ShaderDemo.cpp">
+      <Filter>Demo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OpenGL.h">
@@ -183,6 +189,12 @@
       <Filter>Demo</Filter>
     </ClInclude>
     <ClInclude Include="jni\Primitives.h">
+      <Filter>Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\MathDemo.h">
+      <Filter>Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\ShaderDemo.h">
       <Filter>Demo</Filter>
     </ClInclude>
   </ItemGroup>

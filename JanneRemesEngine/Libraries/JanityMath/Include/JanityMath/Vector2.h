@@ -21,8 +21,8 @@ namespace JanityMath
 		Vector2();
 		Vector2(const float X, const float Y);
 	    explicit Vector2(const float value);
-		~Vector2();
 		Vector2(const Vector2& other);
+		~Vector2();
 	//	Constructors End
 		
 	//	Methods Start
@@ -36,6 +36,10 @@ namespace JanityMath
 		Vector2 transform(const Matrix4& transform) const;
 		Vector2 transform(const Quaternion& quaternion) const;
 		static Vector2 zero();
+		static Vector2 up();
+		static Vector2 down();
+		static Vector2 left();
+		static Vector2 right();
 	//	Methods End
 
 	//	Operators Start

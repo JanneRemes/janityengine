@@ -86,15 +86,15 @@ void Scene04::Draw()
 
 void Scene04::SetProjection()
 {
-	planet->SetProjection(desiredWidth, desiredHeight);
+	/*planet->SetProjection(desiredWidth, desiredHeight);
 	moon->SetProjection(desiredWidth, desiredHeight);
-	probe->SetProjection(desiredWidth, desiredHeight);
+	probe->SetProjection(desiredWidth, desiredHeight);*/
 }
 
 // PRIVATE 
 void Scene04::Initialize()
 {
-	sceneShader = new Shader();
+	/*sceneShader = new Shader();
 	GLuint Program = sceneShader->CreateShader("Scene04/scene04.frag","Scene04/scene04.vert");
 	delete sceneShader;
 
@@ -115,5 +115,5 @@ void Scene04::Initialize()
 	probe	->SetTexture("Scene04/planet.tga");
 
 	sine = 0.0f;
-	keyPressed = false;
+	keyPressed = false;*/
 }

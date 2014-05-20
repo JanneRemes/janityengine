@@ -15,11 +15,13 @@ namespace JanityEngine
 	public:
 		
 		Quad(int X, int Y, float Z, int W, int H);
+		Quad(Vector4 vector, float H);
 		~Quad();
 
 		void Move(Vector3 vector3);
 		void Move(int X, int Y, float Z);
 		void Resize(int W, int H);
+		void Resize(Vector2 vector);
 		void Rotate(float);
 		void SetTexture(Texture* Texture);
 		void SetTexture(const char* Texture);
@@ -35,7 +37,8 @@ namespace JanityEngine
 		
 		void GenBuffer();
 		
-		int x,y,z,h,w;
+		int x,y,z,w,h;
+		
 		float* translation;
 		float* rotation;
 		float* scale;

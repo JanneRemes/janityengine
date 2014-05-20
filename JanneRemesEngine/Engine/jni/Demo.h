@@ -10,6 +10,8 @@
 #include <Scene02.h>
 #include <Scene03.h>
 #include <Scene04.h>
+#include <MathDemo.h>
+#include <ShaderDemo.h>
 
 namespace JanityEngine
 {
@@ -34,15 +36,18 @@ namespace JanityEngine
 
 		void CreateScenes();
 
+
 		Scene01* scene1;
 		Scene02* scene2;
 		Scene03* scene3;
 		Scene04* scene4;
+		MathDemo* mathDemo;
+		ShaderDemo* shaderDemo;
 
 		Sound* bgMusic;
 		Sound* soundEffect[2];
 
-		Primitives* _primitives;
+		Primitives* primitives;
 
 		Camera* camera;
 	

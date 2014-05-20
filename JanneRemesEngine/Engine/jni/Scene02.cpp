@@ -83,7 +83,7 @@ void Scene02::Draw()
 {	
 
 
-	gaia->Draw();
+/*	gaia->Draw();
 	luna1->Draw();
 	luna2->Draw();
 	luna3->Draw();
@@ -91,38 +91,37 @@ void Scene02::Draw()
 	luna4->Draw();
 	luna5->Draw();
 	
-	gaia_cloud->Draw();
+	gaia_cloud->Draw();*/
 }
 
 void Scene02::SetProjection()
 {
-	
-
-	gaia->SetProjection(desiredWidth, desiredHeight);
+/*	gaia->SetProjection(desiredWidth, desiredHeight);
 	gaia_cloud	->SetProjection(desiredWidth, desiredHeight);
 	luna1			->SetProjection(desiredWidth, desiredHeight);
 	luna2			->SetProjection(desiredWidth, desiredHeight);
 	luna3			->SetProjection(desiredWidth, desiredHeight);
 	luna4			->SetProjection(desiredWidth, desiredHeight);
-	luna5			->SetProjection(desiredWidth, desiredHeight);
+	luna5			->SetProjection(desiredWidth, desiredHeight);*/
 }
 
 // PRIVATE
 
 void Scene02::Initialize()
 {
-	// Create shader
+	/*// Create shader
 	sceneShader = new Shader();
 	GLuint Program = sceneShader->CreateShader("Scene02/scene02.frag","Scene02/scene02.vert");
 	delete sceneShader;
 
 	//gaia_cloud =		new Mesh(0, 0, 0, 0.11f,"Scene02/planet.obj");
-	//luna1 =			new Mesh(0, 0, 0, 0.1f, "Scene02/planet.obj");
+	//luna1 =			new Mesh(0, 0, 0, 0.1f, "Scene02/sphere.obj");
 	//luna2 =			new Mesh(0, 0, 0, 0.1f, "Scene02/planet.obj");
 	//luna3 =			new Mesh(0, 0, 0, 0.1f, "Scene02/planet.obj");
 	//luna4 =			new Mesh(0, 0, 0, 0.1f, "Scene02/planet.obj");
 	//luna5 =			new Mesh(0, 0, 0, 0.1f, "Scene02/planet.obj");
 
+	std::vector<Vector2> vecs = Primitives::Sphere.uvs;
 	gaia =			new Mesh(Primitives::Sphere.vertices, Primitives::Sphere.uvs, Primitives::Sphere.normals);
 	gaia_cloud =	new Mesh(Primitives::Sphere.vertices, Primitives::Sphere.uvs, Primitives::Sphere.normals);
 	luna1 =			new Mesh(Primitives::Sphere.vertices, Primitives::Sphere.uvs, Primitives::Sphere.normals);
@@ -164,5 +163,5 @@ void Scene02::Initialize()
 
 	camera = Camera::MainCamera();
 	camera->Move(Vector3(0,10,30), Vector3(0,0,0), Vector3(0,1,0));
-
+	*/
 }

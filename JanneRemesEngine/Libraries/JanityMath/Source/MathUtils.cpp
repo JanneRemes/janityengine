@@ -132,27 +132,27 @@ namespace JanityMath
 	Matrix4 FPSview(Vector3 cameraPosition, float pitch, float yaw)
 	{
 		// If the pitch and yaw angles are in degrees,
-    // they need to be converted to radians. Here
-    // I assume the values are already converted to radians.
-    float cosPitch = cos(pitch);
-    float sinPitch = sin(pitch);
-    float cosYaw = cos(yaw);
-    float sinYaw = sin(yaw);
+		// they need to be converted to radians. Here
+		// I assume the values are already converted to radians.
+		float cosPitch = cos(pitch);
+		float sinPitch = sin(pitch);
+		float cosYaw = cos(yaw);
+		float sinYaw = sin(yaw);
  
-    Vector3 xaxis( cosYaw, 0, -sinYaw);
-    Vector3 yaxis( sinYaw * sinPitch, cosPitch, cosYaw * sinPitch);
-    Vector3 zaxis( sinYaw * cosPitch, -sinPitch, cosPitch * cosYaw);
+		Vector3 xaxis( cosYaw, 0, -sinYaw);
+		Vector3 yaxis( sinYaw * sinPitch, cosPitch, cosYaw * sinPitch);
+		Vector3 zaxis( sinYaw * cosPitch, -sinPitch, cosPitch * cosYaw);
  
-    // Create a 4x4 view matrix from the right, up, forward and eye position vectors
-    Matrix4 viewMatrix 
-	( 
-        Vector4(				   xaxis.x,					 yaxis.x,				   zaxis.x,     0 ),
-        Vector4(				   xaxis.y,					 yaxis.y,				   zaxis.y,     0 ),
-        Vector4(				   xaxis.z,					 yaxis.z,				   zaxis.z,     0 ),
-        Vector4(-xaxis.dot(cameraPosition), -yaxis.dot(cameraPosition), -zaxis.dot(cameraPosition), 1 )
-    );
-     
-    return viewMatrix;
+		// Create a 4x4 view matrix from the right, up, forward and eye position vectors
+		Matrix4 viewMatrix 
+		( 
+		    Vector4(				   xaxis.x,					 yaxis.x,				   zaxis.x,     0 ),
+		    Vector4(				   xaxis.y,					 yaxis.y,				   zaxis.y,     0 ),
+		    Vector4(				   xaxis.z,					 yaxis.z,				   zaxis.z,     0 ),
+		    Vector4(-xaxis.dot(cameraPosition), -yaxis.dot(cameraPosition), -zaxis.dot(cameraPosition), 1 )
+		);
+		 
+		return viewMatrix;
 	}
 	
 

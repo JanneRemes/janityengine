@@ -1,7 +1,9 @@
 #include <Quad.h>
 #include <cmath>
 
+
 using namespace JanityEngine;
+
 
 float* Quad::projection = NULL;
 
@@ -10,9 +12,28 @@ Quad::Quad(int X, int Y, float Z, int W, int H)
 	x = X;
 	y = Y;
 	z = Z;
-	h = H;
 	w = W;
+	h = H;
 
+
+	translation = (float*)calloc(16,sizeof(float));
+	rotation = (float*)calloc(16,sizeof(float));
+	scale = (float*)calloc(16,sizeof(float));
+	glGenBuffers(1, &vbo);
+	GenBuffer();
+	Move(x, y, z);
+	Resize(w,h);
+	Rotate(0);
+}
+
+Quad::Quad(Vector4 vector, float H)
+{
+	x = vector.x;
+	y = vector.y;
+	z = vector.z;
+	w = vector.w;
+	h = H;
+	
 	translation = (float*)calloc(16,sizeof(float));
 	rotation = (float*)calloc(16,sizeof(float));
 	scale = (float*)calloc(16,sizeof(float));
@@ -143,6 +164,10 @@ void Quad::Resize(int W, int H)
 	scale[5] = h;
 	scale[10] = 1;
 	scale[15] = 1;
+}
+void Quad::Resize(Vector2 vector)
+{
+	Resize(vector.x, vector.y);
 }
 
 void Quad::Rotate(float r)

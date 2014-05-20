@@ -181,6 +181,7 @@ Matrix4 Matrix4::createRotationZ(const float angle)
 Matrix4 Matrix4::createRotationAxis(const Vector3& axis, const float angle)
 {
 	assert(axis.isUnitVector());
+	
 	const float x = axis.x;
 	const float y = axis.y;
 	const float z = axis.z;

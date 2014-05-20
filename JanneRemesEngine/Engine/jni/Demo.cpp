@@ -12,34 +12,34 @@ Demo::Demo(float w, float h)
 	desiredHeight = h;
 	CreateScenes();
 
-	activeScene = 1;
+	activeScene = 5;
 	sceneTimer = 0.0f;
 
 	keyPressed = false;
 	std::vector<Vector3>*  out_vertices = new std::vector<Vector3>();
 	out_vertices->push_back(Vector3::zero());
-
 }
 
 Demo::~Demo(void)
 {
-	delete _primitives;
-
+	delete primitives;
 	delete scene1;
 	delete scene2;
 	delete scene3;
 	delete scene4;
+	delete mathDemo;
+	delete shaderDemo;
 }
 
 // PUBLIC
 void Demo::Update(float dt)
 {
-	sceneTimer += dt;
+	//sceneTimer += dt;
 
 	if(sceneTimer > 0.005f)
 	{
 		sceneTimer = 0.0f;
-		if(activeScene < 4)
+		if(activeScene < 5)
 			activeScene++;
 		else
 			activeScene = 1;
@@ -63,6 +63,14 @@ void Demo::Update(float dt)
 	case 4:
 		scene4->SetProjection();
 		scene4->Update(dt);
+		break;
+	case 5:
+		mathDemo->SetProjection();
+		mathDemo->Update(dt);
+		break;
+	case 6:
+		//shaderDemo->SetProjection();
+		//shaderDemo->Update(dt);
 		break;
 	}
 	/*
@@ -102,6 +110,12 @@ void Demo::Draw()
 	case 4:
 		scene4->Draw();
 		break;
+	case 5:
+		mathDemo->Draw();
+		break;
+	case 6:
+		shaderDemo->Draw();
+		break;
 	}
 }
 
@@ -110,7 +124,7 @@ void Demo::Draw()
 
 void Demo::CreateScenes()
 {
-	_primitives = new Primitives();
+	primitives = new Primitives();
 	camera = Camera::MainCamera();
 	camera->Move(Vector3(0,10,30), Vector3(0,0,0), Vector3(0,1,0));
 
@@ -125,6 +139,7 @@ void Demo::CreateScenes()
 	scene2 = new Scene02(desiredWidth, desiredHeight);
 	scene3 = new Scene03(desiredWidth, desiredHeight);
 	scene4 = new Scene04(desiredWidth, desiredHeight);
-
+	mathDemo = new MathDemo(desiredWidth, desiredHeight);
+	shaderDemo = new ShaderDemo(desiredWidth, desiredHeight);
 	//bgMusic->Play(40);
 }

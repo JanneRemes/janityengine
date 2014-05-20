@@ -30,7 +30,7 @@ namespace JanityEngine
 		GameObject *go2;
 		Sprite* sprite1;
 
-		Shader* scene03Shader;
+		Shader* sceneShader;
 	};
 }
 #endif

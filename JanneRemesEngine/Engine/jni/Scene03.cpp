@@ -43,9 +43,9 @@ void Scene03::SetProjection()
 
 void Scene03::Initialize()
 {
-	scene03Shader = new Shader();
-	GLuint Program = scene03Shader->CreateShader("Scene03/scene03.frag","Scene03/scene03.vert");
-	delete scene03Shader;
+	sceneShader = new Shader();
+		GLuint Program = sceneShader->CreateShader("Scene01/scene01.frag","Scene01/scene01.vert");
+	delete sceneShader;
 
 	//GameObject that gets sprite component
 	go1 = new GameObject();

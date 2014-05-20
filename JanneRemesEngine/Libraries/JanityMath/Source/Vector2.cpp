@@ -15,12 +15,13 @@ using namespace JanityMath;
 Vector2::Vector2() : x(0), y(0){}
 Vector2::Vector2(const float X, const float Y) : x(X), y(Y){}
 Vector2::Vector2(const float value) : x(value), y(value){}
-Vector2::~Vector2(){}
 Vector2::Vector2(const Vector2& other)
 {
 	x = other.x;
 	y = other.y;
 }
+Vector2::~Vector2(){}
+
 float Vector2::magnitude() const
 {
 	return sqrt(x * x + y * y);
@@ -80,6 +81,24 @@ Vector2 Vector2::transform(const Quaternion& quaternion) const
 Vector2 Vector2::zero()
 {
 	return Vector2(0.0f);
+}
+
+
+Vector2 Vector2::up()
+{
+	return Vector2(0,1);
+}
+Vector2 Vector2::down()
+{
+	return Vector2(0,-1);
+}
+Vector2 Vector2::left()
+{
+	return Vector2(-1,0);
+}
+Vector2 Vector2::right()
+{
+	return Vector2(1,0);
 }
 
 //Operators

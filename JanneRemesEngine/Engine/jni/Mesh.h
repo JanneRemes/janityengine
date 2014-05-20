@@ -24,7 +24,8 @@ namespace JanityEngine
 		void Move(float X, float Y, float Z);
 		void Move(Vector3 vector3);
 		void Resize(float W, float H, float D);
-		void Rotate(float, int X, int Y, int Z);
+		void Rotate(float r, int X, int Y, int Z);
+		void Rotate(float r, float X, float Y, float Z);
 		void SetTexture(const char* Texture);
 		void SetProgram(GLuint program);
 		void SetProjection(int desiredWidth, int desiredHeight);
